@@ -27,7 +27,7 @@
       <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=APCSDB;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*</Value>
     </Setting>
     <Setting Name="MCNo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PL-M-01</Value>
+      <Value Profile="(Default)">PL-M-04</Value>
     </Setting>
     <Setting Name="TimeStr" Type="System.TimeSpan" Scope="User">
       <Value Profile="(Default)">00:00:00</Value>

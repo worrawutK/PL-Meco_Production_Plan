@@ -124,9 +124,10 @@ Public Class Form1
             Label2.Text = "Meco#1 Machine Information"
         ElseIf My.Settings.MCNo = "PL-M-02" Then
             Label2.Text = "Meco#2 Machine Information"
-        Else
+        ElseIf My.Settings.MCNo = "PL-M-03" Then
             Label2.Text = "Meco#3 Machine Information"
-
+        ElseIf My.Settings.MCNo = "PL-M-04" Then
+            Label2.Text = "Meco#4 Machine Information"
         End If
         Dim date1 As Date = Date.Now
 
