@@ -36,8 +36,10 @@ Partial Class Form1
         Me.DatePlan = New System.Windows.Forms.DateTimePicker()
         Me.MCNo1 = New System.Windows.Forms.RadioButton()
         Me.MCNo2 = New System.Windows.Forms.RadioButton()
+        Me.MCNo4 = New System.Windows.Forms.RadioButton()
         Me.MCNo3 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.MCNoEx4 = New System.Windows.Forms.RadioButton()
         Me.MCNoEx3 = New System.Windows.Forms.RadioButton()
         Me.MCNoEx2 = New System.Windows.Forms.RadioButton()
         Me.MCNoEx1 = New System.Windows.Forms.RadioButton()
@@ -150,8 +152,6 @@ Partial Class Form1
         Me.ToolTypeListTableAdapter1 = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.ToolTypeListTableAdapter()
         Me.TableAdapterManager = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.TableAdapterManager()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MCNoEx4 = New System.Windows.Forms.RadioButton()
-        Me.MCNo4 = New System.Windows.Forms.RadioButton()
         CType(Me.ViewCapa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PLMecoCapaDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -239,7 +239,7 @@ Partial Class Form1
         Me.TapControl.Location = New System.Drawing.Point(33, 47)
         Me.TapControl.Name = "TapControl"
         Me.TapControl.SelectedIndex = 0
-        Me.TapControl.Size = New System.Drawing.Size(950, 650)
+        Me.TapControl.Size = New System.Drawing.Size(1031, 650)
         Me.TapControl.TabIndex = 2
         '
         'AddPlan
@@ -255,7 +255,7 @@ Partial Class Form1
         Me.AddPlan.Location = New System.Drawing.Point(4, 22)
         Me.AddPlan.Name = "AddPlan"
         Me.AddPlan.Padding = New System.Windows.Forms.Padding(3)
-        Me.AddPlan.Size = New System.Drawing.Size(942, 624)
+        Me.AddPlan.Size = New System.Drawing.Size(1023, 624)
         Me.AddPlan.TabIndex = 1
         Me.AddPlan.Text = "Add Plan"
         Me.AddPlan.UseVisualStyleBackColor = True
@@ -302,6 +302,16 @@ Partial Class Form1
         Me.MCNo2.Text = "PL-M-02"
         Me.MCNo2.UseVisualStyleBackColor = True
         '
+        'MCNo4
+        '
+        Me.MCNo4.AutoSize = True
+        Me.MCNo4.Location = New System.Drawing.Point(220, 45)
+        Me.MCNo4.Name = "MCNo4"
+        Me.MCNo4.Size = New System.Drawing.Size(65, 17)
+        Me.MCNo4.TabIndex = 6
+        Me.MCNo4.Text = "PL-M-04"
+        Me.MCNo4.UseVisualStyleBackColor = True
+        '
         'MCNo3
         '
         Me.MCNo3.AutoSize = True
@@ -320,6 +330,16 @@ Partial Class Form1
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Add Plan"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'MCNoEx4
+        '
+        Me.MCNoEx4.AutoSize = True
+        Me.MCNoEx4.Location = New System.Drawing.Point(232, 19)
+        Me.MCNoEx4.Name = "MCNoEx4"
+        Me.MCNoEx4.Size = New System.Drawing.Size(65, 17)
+        Me.MCNoEx4.TabIndex = 9
+        Me.MCNoEx4.Text = "PL-M-04"
+        Me.MCNoEx4.UseVisualStyleBackColor = True
         '
         'MCNoEx3
         '
@@ -365,10 +385,10 @@ Partial Class Form1
         Me.ViewPlan.AllowUserToAddRows = False
         Me.ViewPlan.AllowUserToDeleteRows = False
         Me.ViewPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ViewPlan.Location = New System.Drawing.Point(393, 87)
+        Me.ViewPlan.Location = New System.Drawing.Point(377, 87)
         Me.ViewPlan.Name = "ViewPlan"
         Me.ViewPlan.ReadOnly = True
-        Me.ViewPlan.Size = New System.Drawing.Size(488, 377)
+        Me.ViewPlan.Size = New System.Drawing.Size(603, 377)
         Me.ViewPlan.TabIndex = 2
         '
         'ViewEXPlan
@@ -1369,38 +1389,18 @@ Partial Class Form1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(935, 708)
+        Me.Label1.Location = New System.Drawing.Point(1020, 708)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Ver1.00"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'MCNoEx4
-        '
-        Me.MCNoEx4.AutoSize = True
-        Me.MCNoEx4.Location = New System.Drawing.Point(232, 19)
-        Me.MCNoEx4.Name = "MCNoEx4"
-        Me.MCNoEx4.Size = New System.Drawing.Size(65, 17)
-        Me.MCNoEx4.TabIndex = 9
-        Me.MCNoEx4.Text = "PL-M-04"
-        Me.MCNoEx4.UseVisualStyleBackColor = True
-        '
-        'MCNo4
-        '
-        Me.MCNo4.AutoSize = True
-        Me.MCNo4.Location = New System.Drawing.Point(220, 45)
-        Me.MCNo4.Name = "MCNo4"
-        Me.MCNo4.Size = New System.Drawing.Size(65, 17)
-        Me.MCNo4.TabIndex = 6
-        Me.MCNo4.Text = "PL-M-04"
-        Me.MCNo4.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 730)
+        Me.ClientSize = New System.Drawing.Size(1093, 730)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbMecoPlan)
         Me.Controls.Add(Me.TapControl)
