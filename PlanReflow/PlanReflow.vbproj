@@ -48,6 +48,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
@@ -77,6 +78,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBxDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBxDataSet1.vb">
+      <DependentUpon>DBxDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Machine.vb" />
+    <Compile Include="MonitorPlan.Designer.vb">
+      <DependentUpon>MonitorPlan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorPlan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reflow.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +110,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UserControlViewPlan.Designer.vb">
+      <DependentUpon>UserControlViewPlan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlViewPlan.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MonitorPlan.resx">
+      <DependentUpon>MonitorPlan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reflow.resx">
       <DependentUpon>Reflow.vb</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +130,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlViewPlan.resx">
+      <DependentUpon>UserControlViewPlan.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

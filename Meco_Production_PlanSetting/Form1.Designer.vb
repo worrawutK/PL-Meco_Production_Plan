@@ -152,6 +152,7 @@ Partial Class Form1
         Me.ToolTypeListTableAdapter1 = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.ToolTypeListTableAdapter()
         Me.TableAdapterManager = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.TableAdapterManager()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         CType(Me.ViewCapa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PLMecoCapaDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -406,7 +407,7 @@ Partial Class Form1
         Me.EditCapa.Location = New System.Drawing.Point(4, 22)
         Me.EditCapa.Name = "EditCapa"
         Me.EditCapa.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditCapa.Size = New System.Drawing.Size(942, 624)
+        Me.EditCapa.Size = New System.Drawing.Size(1023, 624)
         Me.EditCapa.TabIndex = 0
         Me.EditCapa.Text = "Edit Capa"
         Me.EditCapa.UseVisualStyleBackColor = True
@@ -424,6 +425,7 @@ Partial Class Form1
         '
         Me.EditPlan.Controls.Add(Me.ViewEdit)
         Me.EditPlan.Controls.Add(Me.btSaveEditPlan)
+        Me.EditPlan.Controls.Add(Me.RadioButton1)
         Me.EditPlan.Controls.Add(Me.MCNoEdit3)
         Me.EditPlan.Controls.Add(Me.MCNoEdit2)
         Me.EditPlan.Controls.Add(Me.MCNoEdit1)
@@ -431,7 +433,7 @@ Partial Class Form1
         Me.EditPlan.Location = New System.Drawing.Point(4, 22)
         Me.EditPlan.Name = "EditPlan"
         Me.EditPlan.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditPlan.Size = New System.Drawing.Size(942, 624)
+        Me.EditPlan.Size = New System.Drawing.Size(1023, 624)
         Me.EditPlan.TabIndex = 2
         Me.EditPlan.Text = "Edit Plan"
         Me.EditPlan.UseVisualStyleBackColor = True
@@ -526,7 +528,7 @@ Partial Class Form1
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(309, 14)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(370, 15)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 1
@@ -538,7 +540,7 @@ Partial Class Form1
         Me.SettingJIG.Location = New System.Drawing.Point(4, 22)
         Me.SettingJIG.Name = "SettingJIG"
         Me.SettingJIG.Padding = New System.Windows.Forms.Padding(3)
-        Me.SettingJIG.Size = New System.Drawing.Size(942, 624)
+        Me.SettingJIG.Size = New System.Drawing.Size(1023, 624)
         Me.SettingJIG.TabIndex = 3
         Me.SettingJIG.Text = "Setting JIG"
         Me.SettingJIG.UseVisualStyleBackColor = True
@@ -600,7 +602,7 @@ Partial Class Form1
         Me.SettingGroup.Location = New System.Drawing.Point(4, 22)
         Me.SettingGroup.Name = "SettingGroup"
         Me.SettingGroup.Padding = New System.Windows.Forms.Padding(3)
-        Me.SettingGroup.Size = New System.Drawing.Size(942, 624)
+        Me.SettingGroup.Size = New System.Drawing.Size(1023, 624)
         Me.SettingGroup.TabIndex = 4
         Me.SettingGroup.Text = "Setting Group"
         Me.SettingGroup.UseVisualStyleBackColor = True
@@ -1262,7 +1264,7 @@ Partial Class Form1
         Me.SelectGroup.Location = New System.Drawing.Point(4, 22)
         Me.SelectGroup.Name = "SelectGroup"
         Me.SelectGroup.Padding = New System.Windows.Forms.Padding(3)
-        Me.SelectGroup.Size = New System.Drawing.Size(942, 624)
+        Me.SelectGroup.Size = New System.Drawing.Size(1023, 624)
         Me.SelectGroup.TabIndex = 5
         Me.SelectGroup.Text = "Select Group"
         Me.SelectGroup.UseVisualStyleBackColor = True
@@ -1393,8 +1395,18 @@ Partial Class Form1
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Ver1.00"
+        Me.Label1.Text = "Ver1.01"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(295, 18)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton1.TabIndex = 2
+        Me.RadioButton1.Text = "PL-M-04"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1578,4 +1590,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents MCNo4 As RadioButton
     Friend WithEvents MCNoEx4 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

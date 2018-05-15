@@ -641,7 +641,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.04"
+        Me.Label5.Text = "Ver 1.05"
         '
         'WipMecoTCdataTableAdapter1
         '

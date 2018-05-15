@@ -197,7 +197,7 @@
 
     End Sub
     Dim valDate As DateTimePicker
-    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged, MCNoEdit3.CheckedChanged, MCNoEdit2.CheckedChanged, MCNoEdit1.CheckedChanged
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged, MCNoEdit3.CheckedChanged, MCNoEdit2.CheckedChanged, MCNoEdit1.CheckedChanged, RadioButton1.CheckedChanged
         Try
             Dim MCNoEditRB As RadioButton = CType(sender, RadioButton)
             MCNoEdit = MCNoEditRB.Text

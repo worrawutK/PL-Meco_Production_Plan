@@ -14,8 +14,8 @@ Public Class Reflow
             Dim MCNo01Path As String = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo01.xml"
             If System.IO.File.Exists(MCNo01Path) = True Then
                 Dim _TableMCNo01 As DBxDataSet1.PLMecoPlanGroupDataTable = New DBxDataSet1.PLMecoPlanGroupDataTable
-                _TableMCNo01.Columns.Add("Period")
-                _TableMCNo01.Columns.Add("RFWIP")
+                '_TableMCNo01.Columns.Add("Period")
+                '_TableMCNo01.Columns.Add("RFWIP")
                 Dim dataView01 As DataView
                 _TableMCNo01.ReadXml(MCNo01Path)
 
@@ -63,8 +63,8 @@ Public Class Reflow
             Dim MCNo02Path As String = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo02.xml"
             If System.IO.File.Exists(MCNo02Path) = True Then
                 Dim _TableMCNo02 As DBxDataSet1.PLMecoPlanGroupDataTable = New DBxDataSet1.PLMecoPlanGroupDataTable
-                _TableMCNo02.Columns.Add("Period")
-                _TableMCNo02.Columns.Add("RFWIP")
+                '_TableMCNo02.Columns.Add("Period")
+                '_TableMCNo02.Columns.Add("RFWIP")
                 Dim dataView02 As DataView
                 _TableMCNo02.ReadXml(MCNo02Path)
 
@@ -113,8 +113,8 @@ Public Class Reflow
             Dim MCNo03Path As String = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
             If System.IO.File.Exists(MCNo03Path) = True Then
                 Dim _TableMCNo03 As DBxDataSet1.PLMecoPlanGroupDataTable = New DBxDataSet1.PLMecoPlanGroupDataTable
-                _TableMCNo03.Columns.Add("Period")
-                _TableMCNo03.Columns.Add("RFWIP")
+                '_TableMCNo03.Columns.Add("Period")
+                '_TableMCNo03.Columns.Add("RFWIP")
                 Dim dataView03 As DataView
                 _TableMCNo03.ReadXml(MCNo03Path)
 
@@ -200,9 +200,10 @@ Public Class Reflow
         ViewMeco1.Columns(5).Width = 80
         ViewMeco1.Columns(6).Width = 50
 
-        ViewMeco1.Columns(4).HeaderText = "Plan" '/" & DayNight.Text
-        ViewMeco1.Columns(1).HeaderText = "Result" '/" & DayNight.Text
-        ViewMeco1.Columns(0).HeaderText = "MWIP"
+        ViewMeco1.Columns(6).HeaderText = "RFW"
+        ViewMeco1.Columns(4).HeaderText = "P" '/" & DayNight.Text
+        ViewMeco1.Columns(1).HeaderText = "R" '/" & DayNight.Text
+        ViewMeco1.Columns(0).HeaderText = "MW"
         ViewMeco1.Columns(5).DisplayIndex = 0
         ViewMeco1.Columns(3).DisplayIndex = 1
         ViewMeco1.Columns(4).DisplayIndex = 2
@@ -218,9 +219,10 @@ Public Class Reflow
         ViewMeco2.Columns(5).Width = 80
         ViewMeco2.Columns(6).Width = 50
 
-        ViewMeco2.Columns(4).HeaderText = "Plan" '/" & DayNight.Text
-        ViewMeco2.Columns(1).HeaderText = "Result" '/" & DayNight.Text
-        ViewMeco2.Columns(0).HeaderText = "MWIP"
+        ViewMeco2.Columns(6).HeaderText = "RFW"
+        ViewMeco2.Columns(4).HeaderText = "P" '/" & DayNight.Text
+        ViewMeco2.Columns(1).HeaderText = "R" '/" & DayNight.Text
+        ViewMeco2.Columns(0).HeaderText = "MW"
         ViewMeco2.Columns(5).DisplayIndex = 0
         ViewMeco2.Columns(3).DisplayIndex = 1
         ViewMeco2.Columns(4).DisplayIndex = 2
@@ -229,16 +231,18 @@ Public Class Reflow
 
 
         ViewMeco3.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        ViewMeco3.Columns(0).Width = 50
-        ViewMeco3.Columns(1).Width = 50
+        ViewMeco3.Columns(0).Width = 25
+        ViewMeco3.Columns(1).Width = 25
         ViewMeco3.Columns(2).Width = 50
-        ViewMeco3.Columns(4).Width = 50
+        ViewMeco3.Columns(4).Width = 25
         ViewMeco3.Columns(5).Width = 80
-        ViewMeco3.Columns(6).Width = 50
+        ViewMeco3.Columns(6).Width = 25
 
-        ViewMeco3.Columns(4).HeaderText = "Plan" '/" & DayNight.Text
-        ViewMeco3.Columns(1).HeaderText = "Result" '/" & DayNight.Text
-        ViewMeco3.Columns(0).HeaderText = "MWIP"
+
+        ViewMeco3.Columns(6).HeaderText = "RFW"
+        ViewMeco3.Columns(4).HeaderText = "P" '/" & DayNight.Text
+        ViewMeco3.Columns(1).HeaderText = "R" '/" & DayNight.Text
+        ViewMeco3.Columns(0).HeaderText = "MW"
         ViewMeco3.Columns(5).DisplayIndex = 0
         ViewMeco3.Columns(3).DisplayIndex = 1
         ViewMeco3.Columns(4).DisplayIndex = 2
