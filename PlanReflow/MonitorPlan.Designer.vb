@@ -22,8 +22,9 @@ Partial Class MonitorPlan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MonitorPlan))
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LabelTimeUpdate = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,6 +39,7 @@ Partial Class MonitorPlan
         Me.btExit = New System.Windows.Forms.Button()
         Me.RfwipTableAdapter1 = New PlanReflow.DBxDataSet1TableAdapters.RFWIPTableAdapter()
         Me.DBxDataSet11 = New PlanReflow.DBxDataSet1()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MecoNo01 = New PlanReflow.UserControlViewPlan()
         Me.MecoNo02 = New PlanReflow.UserControlViewPlan()
         Me.MecoNo03 = New PlanReflow.UserControlViewPlan()
@@ -50,6 +52,7 @@ Partial Class MonitorPlan
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.LabelTimeUpdate)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -66,6 +69,15 @@ Partial Class MonitorPlan
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1342, 744)
         Me.Panel1.TabIndex = 33
+        '
+        'LabelTimeUpdate
+        '
+        Me.LabelTimeUpdate.AutoSize = True
+        Me.LabelTimeUpdate.Location = New System.Drawing.Point(7, 660)
+        Me.LabelTimeUpdate.Name = "LabelTimeUpdate"
+        Me.LabelTimeUpdate.Size = New System.Drawing.Size(112, 13)
+        Me.LabelTimeUpdate.TabIndex = 58
+        Me.LabelTimeUpdate.Text = "Update  In: 00:00 min."
         '
         'Label8
         '
@@ -125,7 +137,7 @@ Partial Class MonitorPlan
         Me.Panel2.Controls.Add(Me.MecoNo04)
         Me.Panel2.Location = New System.Drawing.Point(-1, 72)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1342, 593)
+        Me.Panel2.Size = New System.Drawing.Size(1342, 580)
         Me.Panel2.TabIndex = 55
         '
         'Label7
@@ -193,9 +205,15 @@ Partial Class MonitorPlan
         Me.DBxDataSet11.DataSetName = "DBxDataSet1"
         Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'MecoNo01
         '
         Me.MecoNo01.Location = New System.Drawing.Point(1006, 16)
+        Me.MecoNo01.Machine = Nothing
         Me.MecoNo01.MachineName = Nothing
         Me.MecoNo01.Name = "MecoNo01"
         Me.MecoNo01.Size = New System.Drawing.Size(332, 557)
@@ -204,6 +222,7 @@ Partial Class MonitorPlan
         'MecoNo02
         '
         Me.MecoNo02.Location = New System.Drawing.Point(672, 16)
+        Me.MecoNo02.Machine = Nothing
         Me.MecoNo02.MachineName = Nothing
         Me.MecoNo02.Name = "MecoNo02"
         Me.MecoNo02.Size = New System.Drawing.Size(332, 557)
@@ -212,6 +231,7 @@ Partial Class MonitorPlan
         'MecoNo03
         '
         Me.MecoNo03.Location = New System.Drawing.Point(338, 16)
+        Me.MecoNo03.Machine = Nothing
         Me.MecoNo03.MachineName = Nothing
         Me.MecoNo03.Name = "MecoNo03"
         Me.MecoNo03.Size = New System.Drawing.Size(332, 557)
@@ -220,6 +240,7 @@ Partial Class MonitorPlan
         'MecoNo04
         '
         Me.MecoNo04.Location = New System.Drawing.Point(4, 16)
+        Me.MecoNo04.Machine = Nothing
         Me.MecoNo04.MachineName = Nothing
         Me.MecoNo04.Name = "MecoNo04"
         Me.MecoNo04.Size = New System.Drawing.Size(332, 557)
@@ -261,4 +282,6 @@ Partial Class MonitorPlan
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents LabelTimeUpdate As Label
 End Class

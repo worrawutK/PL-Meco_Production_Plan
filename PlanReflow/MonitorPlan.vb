@@ -9,6 +9,7 @@ Public Class MonitorPlan
     Private ListPKGNotReflow As List(Of String) = New List(Of String)
     Private PathXmlMachineList As String = My.Application.Info.DirectoryPath & "\MachineList.xml"
     Private PathXmlListPKGNotReflow As String = My.Application.Info.DirectoryPath & "\ListPKGNotReflow.xml"
+    Private timeUpdate As TimeSpan = New TimeSpan(0, 5, 0)
     Private Sub XmlSave(fileOb As Object, pathFile As String)
         Dim fs As FileStream = New FileStream(pathFile, FileMode.Create)
         Dim bs As New XmlSerializer(fileOb.GetType())
@@ -92,8 +93,21 @@ Public Class MonitorPlan
             MsgBox(ex.Message.ToString())
         End Try
     End Sub
+    Private Sub TimeCountUpdate()
 
-    Private Sub btExit_Click(sender As Object, e As EventArgs) Handles btExit.Click
+        If timeUpdate.TotalSeconds = 0 Then
+            LoadData()
+            timeUpdate = New TimeSpan(0, 5, 0)
+        End If
+        timeUpdate = timeUpdate - New TimeSpan(0, 0, 1)
+        LabelTimeUpdate.Text = "Update  In:" & timeUpdate.ToString("mm") & ":" & timeUpdate.ToString("ss") & " min."
+    End Sub
+    Private Sub BtExit_Click(sender As Object, e As EventArgs) Handles btExit.Click
         Me.Close()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'LoadData()
+        TimeCountUpdate()
     End Sub
 End Class

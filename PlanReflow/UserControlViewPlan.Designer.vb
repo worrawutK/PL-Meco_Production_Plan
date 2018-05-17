@@ -27,7 +27,6 @@ Partial Class UserControlViewPlan
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Period = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Package = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DayPlan = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,8 +34,12 @@ Partial Class UserControlViewPlan
         Me.WIP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RFWIP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupPKG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PlMecoPlanGroupTableAdapter1 = New PlanReflow.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
+        Me.DBxDataSet11 = New PlanReflow.DBxDataSet1()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -79,19 +82,6 @@ Partial Class UserControlViewPlan
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(657, 596)
         Me.DataGridView1.TabIndex = 35
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.MintCream
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(657, 42)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Meco#0 Machine"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Period
         '
@@ -151,6 +141,28 @@ Partial Class UserControlViewPlan
         Me.GroupPKG.ReadOnly = True
         Me.GroupPKG.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.MintCream
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(657, 42)
+        Me.Label1.TabIndex = 34
+        Me.Label1.Text = "Meco#0 Machine"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PlMecoPlanGroupTableAdapter1
+        '
+        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
+        '
+        'DBxDataSet11
+        '
+        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
+        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'UserControlViewPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -160,6 +172,7 @@ Partial Class UserControlViewPlan
         Me.Size = New System.Drawing.Size(657, 638)
         Me.Panel1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -174,4 +187,6 @@ Partial Class UserControlViewPlan
     Friend WithEvents WIP As DataGridViewTextBoxColumn
     Friend WithEvents RFWIP As DataGridViewTextBoxColumn
     Friend WithEvents GroupPKG As DataGridViewTextBoxColumn
+    Friend WithEvents PlMecoPlanGroupTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter
+    Friend WithEvents DBxDataSet11 As DBxDataSet1
 End Class

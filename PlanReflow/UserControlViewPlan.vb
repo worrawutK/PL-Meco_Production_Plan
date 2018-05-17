@@ -6,7 +6,15 @@
     '    ' Add any initialization after the InitializeComponent() call.
     '    c_DataBinding.DataSource = dataTable
     'End Sub
-
+    Private c_Machine As Machine
+    Public Property Machine() As Machine
+        Get
+            Return c_Machine
+        End Get
+        Set(ByVal value As Machine)
+            c_Machine = value
+        End Set
+    End Property
     Private Sub UserControlViewPlan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'DataGridView1.DataSource = Data
