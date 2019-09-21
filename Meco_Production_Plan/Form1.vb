@@ -20,6 +20,7 @@ Public Class Form1
     Dim PlanDayDivide As Integer = 1
     '    Dim Percent As Integer = 70
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        PlanDayDivide = My.Settings.PlanDayDivide
         CbPercentBooking.Text = My.Settings.Percent
         Dim date1 As DateTime = Date.Now
 
@@ -1641,7 +1642,8 @@ Public Class Form1
         'Return "Data Source=CLIENT-205\SQLEXPRESS;Initial Catalog=DBTest;Integrated Security=False;User ID=sa;Password=1234"
         '172.16.0.102;Initial Catalog=DBx;User ID=dbxuser
         ' Return "Data Source=172.16.0.102;Initial Catalog=DBx;User ID=sa;Password=5dcda45fc424*"
-        Return "Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
+        'Return "Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
+        Return My.Settings.DBxConnectionString
         ' Return "Data Source=172.16.0.102;Initial Catalog=DBxDW;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
     End Function
     Private Function GetSQLTest() As String
@@ -1739,6 +1741,10 @@ Public Class Form1
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub TimerlbShow_Tick(sender As Object, e As EventArgs) Handles TimerlbShow.Tick
+
     End Sub
 #End Region
 End Class
