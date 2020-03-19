@@ -90,8 +90,37 @@ Public Class MonitorPlan
             Next
 
         Catch ex As Exception
-            MsgBox(ex.Message.ToString())
+            SaveCatchLog(ex.Message.ToString(), "LoadData")
+            'MsgBox(ex.Message.ToString())
         End Try
+    End Sub
+    Public DIR_LOG As String = My.Application.Info.DirectoryPath & "\LOG"
+    Public Sub SaveCatchLog(ByVal message As String, ByVal fnName As String)
+        If Directory.Exists(DIR_LOG & "\BackUp") = False Then
+            Directory.CreateDirectory(DIR_LOG & "\BackUp")
+        End If
+        Dim arr As String() = Directory.GetFiles(DIR_LOG)
+        If arr.Length >= 50 Then
+            Dim arr1 As String() = Directory.GetFiles(DIR_LOG & "\BackUp")
+            For Each strData1 As String In arr1
+                File.Delete(strData1)
+            Next
+            For Each strData As String In arr
+                Dim pathSource As String = strData
+                Dim pathdes As String = strData.Replace(DIR_LOG, DIR_LOG & "\BackUp")
+                File.Move(pathSource, pathdes)
+            Next
+
+            Directory.CreateDirectory(DIR_LOG & "\BackUp")
+            '    File.Move(arr., DIR_LOG & "\BackUp")
+        End If
+        'Using sw As StreamReader = New StreamReader(Path.Combine(DIR_LOG, "Catch_" & Now.ToString("yyyyMMdd") & ".log"), True)
+        '    sw.WriteLine(Now.ToString("yyyy/MM/dd HH:mm:ss.fff") & " " & fnName & ">" & message)
+        'End Using
+
+        Using sw As StreamWriter = New StreamWriter(Path.Combine(DIR_LOG, "Catch_" & Now.ToString("yyyyMMdd") & ".log"), True)
+            sw.WriteLine(Now.ToString("yyyy/MM/dd HH:mm:ss.fff") & " " & fnName & ">" & message)
+        End Using
     End Sub
     Private Sub TimeCountUpdate()
 
