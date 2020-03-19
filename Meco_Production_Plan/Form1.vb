@@ -1746,5 +1746,9 @@ Public Class Form1
     Private Sub TimerlbShow_Tick(sender As Object, e As EventArgs) Handles TimerlbShow.Tick
 
     End Sub
+
+    Private Sub BtSetupLot_Click(sender As Object, e As EventArgs) Handles btSetupLot.Click
+
+    End Sub
 #End Region
 End Class

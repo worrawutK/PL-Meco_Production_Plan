@@ -88,6 +88,7 @@ Partial Class Form1
         Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btSetupLot = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +105,7 @@ Partial Class Form1
         '
         Me.DayNight.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DayNight.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.DayNight.Location = New System.Drawing.Point(627, 120)
+        Me.DayNight.Location = New System.Drawing.Point(1171, 120)
         Me.DayNight.Name = "DayNight"
         Me.DayNight.Size = New System.Drawing.Size(352, 25)
         Me.DayNight.TabIndex = 20
@@ -127,7 +128,7 @@ Partial Class Form1
         '
         Me.Time.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Time.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Time.Location = New System.Drawing.Point(969, 131)
+        Me.Time.Location = New System.Drawing.Point(1513, 131)
         Me.Time.Name = "Time"
         Me.Time.Size = New System.Drawing.Size(352, 25)
         Me.Time.TabIndex = 18
@@ -637,7 +638,7 @@ Partial Class Form1
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(1324, 763)
+        Me.Label5.Location = New System.Drawing.Point(1868, 1063)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
@@ -708,11 +709,23 @@ Partial Class Form1
         Me.Button3.TabIndex = 36
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'btSetupLot
+        '
+        Me.btSetupLot.BackColor = System.Drawing.Color.YellowGreen
+        Me.btSetupLot.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.btSetupLot.ForeColor = System.Drawing.Color.White
+        Me.btSetupLot.Location = New System.Drawing.Point(1038, 1010)
+        Me.btSetupLot.Name = "btSetupLot"
+        Me.btSetupLot.Size = New System.Drawing.Size(138, 58)
+        Me.btSetupLot.TabIndex = 25
+        Me.btSetupLot.Text = "Setup Lot"
+        Me.btSetupLot.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1376, 780)
+        Me.ClientSize = New System.Drawing.Size(1920, 1080)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button5)
@@ -720,6 +733,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DataGridView3)
         Me.Controls.Add(Me.btRemoveFromUsage)
         Me.Controls.Add(Me.btExit)
+        Me.Controls.Add(Me.btSetupLot)
         Me.Controls.Add(Me.btPMREQUEST)
         Me.Controls.Add(Me.btOPM)
         Me.Controls.Add(Me.btTYPECHANGE)
@@ -820,4 +834,5 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents lbTimeUpdate As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents btSetupLot As Button
 End Class
