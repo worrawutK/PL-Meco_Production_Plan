@@ -1748,7 +1748,31 @@ Public Class Form1
     End Sub
 
     Private Sub BtSetupLot_Click(sender As Object, e As EventArgs) Handles btSetupLot.Click
-
+        'Using frm As New FormCheckSetupLot()
+        '    frm.ShowDialog()
+        'End Using
+        Dim lotNo As String
+        Dim carrierNo As String
+        Using frm As New FormInputQrCode(FormInputQrCode.InputType.Slip252)
+            If frm.ShowDialog() <> DialogResult.OK Then
+                Return
+            End If
+            lotNo = frm.QrCode.Substring(30, 10).Trim()
+        End Using
+        Using frm As New FormInputQrCode(FormInputQrCode.InputType.Carrier)
+            If frm.ShowDialog() <> DialogResult.OK Then
+                Return
+            End If
+            carrierNo = frm.QrCode.Trim()
+        End Using
+        Dim result As resultBase = CheckSetupLot(lotNo, My.Settings.MCNo, carrierNo, lbOPNo.Text)
+        If Not result.IsPass Then
+            MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason, "Stored", result.ErrorNo)
+        Else
+            Dim frm As MessageDialogAccept = New MessageDialogAccept("Meco WIP")
+            frm.ShowDialog()
+        End If
+        SaveCatchLog("lotNo:" + lotNo + ", MCNo:" + My.Settings.MCNo + ",carrierNo:" + carrierNo + ",opno:" + lbOPNo.Text, "CheckSetupLot")
     End Sub
 #End Region
 End Class
