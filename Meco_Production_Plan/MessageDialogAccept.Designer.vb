@@ -23,32 +23,45 @@ Partial Class MessageDialogAccept
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.panel4 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.labelErrorNo = New System.Windows.Forms.Label()
         Me.labelAlarmTitle = New System.Windows.Forms.Label()
+        Me.pictureBoxTitelBar = New System.Windows.Forms.PictureBox()
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pictureBoxTitelBar = New System.Windows.Forms.PictureBox()
         Me.pictureBoxDismiss = New System.Windows.Forms.PictureBox()
+        Me.LabelDetail = New System.Windows.Forms.Label()
         Me.panel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
+        CType(Me.pictureBoxTitelBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel1.SuspendLayout()
         Me.panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureBoxTitelBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBoxDismiss, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel4
         '
         Me.panel4.BackColor = System.Drawing.Color.Transparent
+        Me.panel4.Controls.Add(Me.LabelDetail)
         Me.panel4.Controls.Add(Me.PictureBox1)
         Me.panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel4.Location = New System.Drawing.Point(0, 93)
         Me.panel4.Name = "panel4"
         Me.panel4.Size = New System.Drawing.Size(498, 237)
         Me.panel4.TabIndex = 13
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Meco_Production_Plan.My.Resources.Resources.PictureBoxStickerYeah
+        Me.PictureBox1.Location = New System.Drawing.Point(157, 54)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(183, 177)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'panel2
         '
@@ -87,6 +100,17 @@ Partial Class MessageDialogAccept
         Me.labelAlarmTitle.TabIndex = 0
         Me.labelAlarmTitle.Text = "ALARM INFORMATION"
         '
+        'pictureBoxTitelBar
+        '
+        Me.pictureBoxTitelBar.BackColor = System.Drawing.Color.Transparent
+        Me.pictureBoxTitelBar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pictureBoxTitelBar.Image = Global.Meco_Production_Plan.My.Resources.Resources.Greenbar
+        Me.pictureBoxTitelBar.Location = New System.Drawing.Point(0, 0)
+        Me.pictureBoxTitelBar.Name = "pictureBoxTitelBar"
+        Me.pictureBoxTitelBar.Size = New System.Drawing.Size(498, 93)
+        Me.pictureBoxTitelBar.TabIndex = 0
+        Me.pictureBoxTitelBar.TabStop = False
+        '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.SystemColors.Menu
@@ -109,27 +133,6 @@ Partial Class MessageDialogAccept
         Me.panel3.Size = New System.Drawing.Size(498, 59)
         Me.panel3.TabIndex = 11
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Meco_Production_Plan.My.Resources.Resources.PictureBoxStickerYeah
-        Me.PictureBox1.Location = New System.Drawing.Point(139, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(218, 225)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'pictureBoxTitelBar
-        '
-        Me.pictureBoxTitelBar.BackColor = System.Drawing.Color.Transparent
-        Me.pictureBoxTitelBar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pictureBoxTitelBar.Image = Global.Meco_Production_Plan.My.Resources.Resources.Greenbar
-        Me.pictureBoxTitelBar.Location = New System.Drawing.Point(0, 0)
-        Me.pictureBoxTitelBar.Name = "pictureBoxTitelBar"
-        Me.pictureBoxTitelBar.Size = New System.Drawing.Size(498, 93)
-        Me.pictureBoxTitelBar.TabIndex = 0
-        Me.pictureBoxTitelBar.TabStop = False
-        '
         'pictureBoxDismiss
         '
         Me.pictureBoxDismiss.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -141,6 +144,17 @@ Partial Class MessageDialogAccept
         Me.pictureBoxDismiss.TabIndex = 4
         Me.pictureBoxDismiss.TabStop = False
         '
+        'LabelDetail
+        '
+        Me.LabelDetail.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LabelDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDetail.Location = New System.Drawing.Point(0, 0)
+        Me.LabelDetail.Name = "LabelDetail"
+        Me.LabelDetail.Size = New System.Drawing.Size(498, 51)
+        Me.LabelDetail.TabIndex = 1
+        Me.LabelDetail.Text = "-"
+        Me.LabelDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'MessageDialogAccept
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,12 +164,12 @@ Partial Class MessageDialogAccept
         Me.Name = "MessageDialogAccept"
         Me.Text = "MessageDialogAccept"
         Me.panel4.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
+        CType(Me.pictureBoxTitelBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel1.ResumeLayout(False)
         Me.panel3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureBoxTitelBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureBoxDismiss, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -170,4 +184,5 @@ Partial Class MessageDialogAccept
     Private WithEvents panel3 As Panel
     Private WithEvents pictureBoxDismiss As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LabelDetail As Label
 End Class

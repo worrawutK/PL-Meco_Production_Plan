@@ -75,20 +75,15 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.WipMecoTCdataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.WIPMecoTCdataTableAdapter()
-        Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
-        Me.TableAdapterManager1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TableAdapterManager()
-        Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
-        Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
-        Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
-        Me.ApcsdbwipTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.APCSDBWIPTableAdapter()
-        Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
-        Me.WipMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.WIPMecoTableAdapter()
-        Me.PlMecoPlanDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanDataTableAdapter()
-        Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btSetupLot = New System.Windows.Forms.Button()
+        Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
+        Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
+        Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
+        Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
+        Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
+        Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,8 +92,8 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DayNight
@@ -642,59 +637,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.06"
-        '
-        'WipMecoTCdataTableAdapter1
-        '
-        Me.WipMecoTCdataTableAdapter1.ClearBeforeFill = True
-        '
-        'TestWipSumTableAdapter1
-        '
-        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.PLIPMWipTableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoCapaDataTableAdapter = Me.PlMecoCapaDataTableAdapter1
-        Me.TableAdapterManager1.PLMecoJigToolTableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoPlanData1TableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoPlanDataTableAdapter = Nothing
-        Me.TableAdapterManager1.PLToolTypeTableAdapter = Nothing
-        Me.TableAdapterManager1.UpdateOrder = Meco_Production_Plan.DBxDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'PlMecoCapaDataTableAdapter1
-        '
-        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
-        '
-        'ResultMecoTableAdapter1
-        '
-        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanGroupTableAdapter1
-        '
-        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
-        '
-        'ApcsdbwipTableAdapter1
-        '
-        Me.ApcsdbwipTableAdapter1.ClearBeforeFill = True
-        '
-        'DBxDataSet11
-        '
-        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
-        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'WipMecoTableAdapter1
-        '
-        Me.WipMecoTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanDataTableAdapter1
-        '
-        Me.PlMecoPlanDataTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanData1TableAdapter1
-        '
-        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
+        Me.Label5.Text = "Ver 1.07"
         '
         'Button3
         '
@@ -720,6 +663,31 @@ Partial Class Form1
         Me.btSetupLot.TabIndex = 25
         Me.btSetupLot.Text = "Setup Lot"
         Me.btSetupLot.UseVisualStyleBackColor = False
+        '
+        'TestWipSumTableAdapter1
+        '
+        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoCapaDataTableAdapter1
+        '
+        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
+        '
+        'ResultMecoTableAdapter1
+        '
+        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoPlanGroupTableAdapter1
+        '
+        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
+        '
+        'DBxDataSet11
+        '
+        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
+        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlMecoPlanData1TableAdapter1
+        '
+        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
         '
         'Form1
         '
@@ -764,25 +732,20 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents WipMecoTCdataTableAdapter1 As DBxDataSet1TableAdapters.WIPMecoTCdataTableAdapter
     Friend WithEvents TestWipSumTableAdapter1 As DBxDataSet1TableAdapters.TestWipSumTableAdapter
-    Friend WithEvents TableAdapterManager1 As DBxDataSet1TableAdapters.TableAdapterManager
     Friend WithEvents PlMecoCapaDataTableAdapter1 As DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter
     Friend WithEvents ResultMecoTableAdapter1 As DBxDataSet1TableAdapters.ResultMecoTableAdapter
     Friend WithEvents PlMecoPlanGroupTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter
-    Friend WithEvents ApcsdbwipTableAdapter1 As DBxDataSet1TableAdapters.APCSDBWIPTableAdapter
     Friend WithEvents DBxDataSet11 As DBxDataSet1
     Friend WithEvents DayNight As Label
     Friend WithEvents lbPKGRUN As Label
     Friend WithEvents Time As Label
-    Friend WithEvents WipMecoTableAdapter1 As DBxDataSet1TableAdapters.WIPMecoTableAdapter
     Friend WithEvents TimerNow As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
@@ -796,7 +759,6 @@ Partial Class Form1
     Friend WithEvents ViewTop3 As DataGridView
     Friend WithEvents ViewPlanDay As DataGridView
     Friend WithEvents TimerUpdate As Timer
-    Friend WithEvents PlMecoPlanDataTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanDataTableAdapter
     Friend WithEvents PlMecoPlanData1TableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter
     Friend WithEvents lbStatus As Label
     Friend WithEvents lbStatusColor As Label

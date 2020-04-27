@@ -596,25 +596,40 @@ Public Class Form1
 
 
         PlMecoPlanData1TableAdapter1.FillBy(DBxDataSet11.PLMecoPlanData1, MecoPlanday, My.Settings.MCNo)
-        ApcsdbwipTableAdapter1.Fill(DBxDataSet11.APCSDBWIP)
+        'ApcsdbwipTableAdapter1.Fill(DBxDataSet11.APCSDBWIP)
 
 
         Dim WIPIPMAdapters As New DBxDataSet1TableAdapters.PLIPMWipTableAdapter 'count wip package PLIPMWip
 
         Dim WIPIPM As DBxDataSet1.PLIPMWipDataTable = WIPIPMAdapters.GetData() '2  sec
 
-
+        Dim lotdatas As List(Of LotData) = GetWIPData()
         For Each Data As DBxDataSet1.PLMecoPlanData1Row In DBxDataSet11.PLMecoPlanData1
             'Data WIP APCSDB
             Dim CheckPKG As Boolean = False
-            For Each apcsData As DBxDataSet1.APCSDBWIPRow In DBxDataSet11.APCSDBWIP
 
-                If Data.Package = apcsData.FORM_NAME Then
-                    Data.WIP = apcsData.WIP
-                    CheckPKG = True
-                End If
+            Dim lotdata_pkg As List(Of LotData) = lotdatas.Where(Function(x) x.Package.ToUpper.Trim = Data.Package.ToUpper.Trim).ToList
+            If lotdata_pkg.Count > 0 Then
+                CheckPKG = True
+                Data.WIP = lotdata_pkg.Count
+            End If
 
-            Next
+            'For Each lotdata In lotdatas.Where(Function(x) x.Package.ToUpper.Trim = Data.Package.ToUpper.Trim)
+            '    'If Data.Package = lotdata Then
+            '    '    Data.WIP = lotdata.WIP
+            '    '    CheckPKG = True
+            '    'End If
+            'Next
+
+
+            'For Each apcsData As DBxDataSet1.APCSDBWIPRow In DBxDataSet11.APCSDBWIP
+
+            '    If Data.Package = apcsData.FORM_NAME Then
+            '        Data.WIP = apcsData.WIP
+            '        CheckPKG = True
+            '    End If
+
+            'Next
 
             If CheckPKG = False Then
                 Dim count As Integer = 0
@@ -1751,7 +1766,7 @@ Public Class Form1
         'Using frm As New FormCheckSetupLot()
         '    frm.ShowDialog()
         'End Using
-        Dim lotNo As String
+        Dim lotNo As String = "1234A6789V"
         Dim carrierNo As String
         Using frm As New FormInputQrCode(FormInputQrCode.InputType.Slip252)
             If frm.ShowDialog() <> DialogResult.OK Then
@@ -1767,9 +1782,9 @@ Public Class Form1
         End Using
         Dim result As resultBase = CheckSetupLot(lotNo, My.Settings.MCNo, carrierNo, lbOPNo.Text)
         If Not result.IsPass Then
-            MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason, "Stored", result.ErrorNo)
+            MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason & vbCr & result.Comment, "Stored", result.ErrorNo)
         Else
-            Dim frm As MessageDialogAccept = New MessageDialogAccept("Meco WIP")
+            Dim frm As MessageDialogAccept = New MessageDialogAccept("Setup", My.Settings.MCNo, lotNo)
             frm.ShowDialog()
         End If
         SaveCatchLog("lotNo:" + lotNo + ", MCNo:" + My.Settings.MCNo + ",carrierNo:" + carrierNo + ",opno:" + lbOPNo.Text, "CheckSetupLot")

@@ -26,4 +26,13 @@
             c_Reason = value
         End Set
     End Property
+    Private c_Comment As String
+    Public Property Comment() As String
+        Get
+            Return c_Comment
+        End Get
+        Set(ByVal value As String)
+            c_Comment = value
+        End Set
+    End Property
 End Class
