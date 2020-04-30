@@ -49,9 +49,9 @@ Partial Class FormInputQrCode
         'TextBoxQr
         '
         Me.TextBoxQr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxQr.Location = New System.Drawing.Point(41, 89)
+        Me.TextBoxQr.Location = New System.Drawing.Point(25, 89)
         Me.TextBoxQr.Name = "TextBoxQr"
-        Me.TextBoxQr.Size = New System.Drawing.Size(10, 20)
+        Me.TextBoxQr.Size = New System.Drawing.Size(1, 20)
         Me.TextBoxQr.TabIndex = 2
         '
         'FormInputQrCode

@@ -75,15 +75,18 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btSetupLot = New System.Windows.Forms.Button()
         Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
         Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
         Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
         Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
         Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
         Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
+        Me.TextBoxQr = New System.Windows.Forms.TextBox()
+        Me.PictureBoxQr = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PanelQr = New System.Windows.Forms.Panel()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,8 +95,10 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelQr.SuspendLayout()
         Me.SuspendLayout()
         '
         'DayNight
@@ -603,7 +608,7 @@ Partial Class Form1
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(1209, 869)
+        Me.DataGridView3.Location = New System.Drawing.Point(1205, 842)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.Size = New System.Drawing.Size(240, 150)
         Me.DataGridView3.TabIndex = 32
@@ -637,32 +642,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.07"
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.Meco_Production_Plan.My.Resources.Resources.minimize_window_xxl
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(1676, 1009)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(91, 58)
-        Me.Button3.TabIndex = 36
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'btSetupLot
-        '
-        Me.btSetupLot.BackColor = System.Drawing.Color.YellowGreen
-        Me.btSetupLot.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.btSetupLot.ForeColor = System.Drawing.Color.White
-        Me.btSetupLot.Location = New System.Drawing.Point(1038, 1010)
-        Me.btSetupLot.Name = "btSetupLot"
-        Me.btSetupLot.Size = New System.Drawing.Size(138, 58)
-        Me.btSetupLot.TabIndex = 25
-        Me.btSetupLot.Text = "Setup Lot"
-        Me.btSetupLot.UseVisualStyleBackColor = False
+        Me.Label5.Text = "Ver 1.10"
         '
         'TestWipSumTableAdapter1
         '
@@ -689,11 +669,63 @@ Partial Class Form1
         '
         Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
         '
+        'TextBoxQr
+        '
+        Me.TextBoxQr.BackColor = System.Drawing.Color.White
+        Me.TextBoxQr.Location = New System.Drawing.Point(1584, 1015)
+        Me.TextBoxQr.Name = "TextBoxQr"
+        Me.TextBoxQr.Size = New System.Drawing.Size(1, 20)
+        Me.TextBoxQr.TabIndex = 37
+        '
+        'PictureBoxQr
+        '
+        Me.PictureBoxQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxQr.Image = Global.Meco_Production_Plan.My.Resources.Resources.qr_code
+        Me.PictureBoxQr.Location = New System.Drawing.Point(4, 4)
+        Me.PictureBoxQr.Name = "PictureBoxQr"
+        Me.PictureBoxQr.Size = New System.Drawing.Size(59, 51)
+        Me.PictureBoxQr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxQr.TabIndex = 38
+        Me.PictureBoxQr.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = Global.Meco_Production_Plan.My.Resources.Resources.minimize_window_xxl
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(1676, 1009)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(91, 58)
+        Me.Button3.TabIndex = 36
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'PanelQr
+        '
+        Me.PanelQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelQr.Controls.Add(Me.PictureBoxQr)
+        Me.PanelQr.Location = New System.Drawing.Point(1591, 1010)
+        Me.PanelQr.Name = "PanelQr"
+        Me.PanelQr.Size = New System.Drawing.Size(69, 61)
+        Me.PanelQr.TabIndex = 39
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(32, 1071)
+        Me.ProgressBar1.Maximum = 252
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(1833, 6)
+        Me.ProgressBar1.TabIndex = 40
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.PanelQr)
+        Me.Controls.Add(Me.TextBoxQr)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button5)
@@ -701,7 +733,6 @@ Partial Class Form1
         Me.Controls.Add(Me.DataGridView3)
         Me.Controls.Add(Me.btRemoveFromUsage)
         Me.Controls.Add(Me.btExit)
-        Me.Controls.Add(Me.btSetupLot)
         Me.Controls.Add(Me.btPMREQUEST)
         Me.Controls.Add(Me.btOPM)
         Me.Controls.Add(Me.btTYPECHANGE)
@@ -732,8 +763,10 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelQr.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -796,5 +829,8 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents lbTimeUpdate As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents btSetupLot As Button
+    Friend WithEvents TextBoxQr As TextBox
+    Friend WithEvents PictureBoxQr As PictureBox
+    Friend WithEvents PanelQr As Panel
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

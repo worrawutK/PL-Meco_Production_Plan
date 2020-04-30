@@ -22,7 +22,9 @@ Partial Class MessageDialogAccept
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.panel4 = New System.Windows.Forms.Panel()
+        Me.LabelDetail = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.labelErrorNo = New System.Windows.Forms.Label()
@@ -31,7 +33,7 @@ Partial Class MessageDialogAccept
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.panel3 = New System.Windows.Forms.Panel()
         Me.pictureBoxDismiss = New System.Windows.Forms.PictureBox()
-        Me.LabelDetail = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
@@ -52,6 +54,17 @@ Partial Class MessageDialogAccept
         Me.panel4.Name = "panel4"
         Me.panel4.Size = New System.Drawing.Size(498, 237)
         Me.panel4.TabIndex = 13
+        '
+        'LabelDetail
+        '
+        Me.LabelDetail.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LabelDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDetail.Location = New System.Drawing.Point(0, 0)
+        Me.LabelDetail.Name = "LabelDetail"
+        Me.LabelDetail.Size = New System.Drawing.Size(498, 51)
+        Me.LabelDetail.TabIndex = 1
+        Me.LabelDetail.Text = "-"
+        Me.LabelDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1
         '
@@ -144,16 +157,9 @@ Partial Class MessageDialogAccept
         Me.pictureBoxDismiss.TabIndex = 4
         Me.pictureBoxDismiss.TabStop = False
         '
-        'LabelDetail
+        'Timer1
         '
-        Me.LabelDetail.Dock = System.Windows.Forms.DockStyle.Top
-        Me.LabelDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDetail.Location = New System.Drawing.Point(0, 0)
-        Me.LabelDetail.Name = "LabelDetail"
-        Me.LabelDetail.Size = New System.Drawing.Size(498, 51)
-        Me.LabelDetail.TabIndex = 1
-        Me.LabelDetail.Text = "-"
-        Me.LabelDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Timer1.Interval = 3500
         '
         'MessageDialogAccept
         '
@@ -162,6 +168,7 @@ Partial Class MessageDialogAccept
         Me.ClientSize = New System.Drawing.Size(498, 389)
         Me.Controls.Add(Me.panel1)
         Me.Name = "MessageDialogAccept"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MessageDialogAccept"
         Me.panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -185,4 +192,5 @@ Partial Class MessageDialogAccept
     Private WithEvents pictureBoxDismiss As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LabelDetail As Label
+    Friend WithEvents Timer1 As Timer
 End Class

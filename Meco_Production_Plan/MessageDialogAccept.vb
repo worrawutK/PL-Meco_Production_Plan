@@ -16,5 +16,14 @@
         'pictureBoxDismiss.Image = Rohm.Common.CellController.Properties.Resources.btnGreenOK
         labelAlarmTitle.Parent = pictureBoxTitelBar
         LabelDetail.Text = "กรุณา Input LotNo " & c_LotNo & vbCrLf & "  ที่เครื่อง " & c_McNo & " ได้เลยครับ"
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Me.DialogResult = DialogResult.OK
+    End Sub
+
+    Private Sub PictureBoxDismiss_Click(sender As Object, e As EventArgs) Handles pictureBoxDismiss.Click
+        Me.DialogResult = DialogResult.OK
     End Sub
 End Class

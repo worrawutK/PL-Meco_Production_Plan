@@ -1,5 +1,5 @@
 ﻿Module ModuleAdo
-    Public Function CheckSetupLot(lotNo As String, machine As String, carrierNo As String, opno As String) As resultBase
+    Public Function CheckSetupLot(lotNo As String, machine As String, opno As String) As resultBase
         Dim result As resultBase = New resultBase()
         Dim is_pass As Integer = 0
         Dim message As String = ""
@@ -12,7 +12,7 @@
             cmd.Parameters.Add("@mcno", SqlDbType.VarChar).Value = machine
             cmd.Parameters.Add("@lotno", SqlDbType.VarChar).Value = lotNo
             cmd.Parameters.Add("@opno", SqlDbType.VarChar).Value = opno
-            cmd.Parameters.Add("@carrierno", SqlDbType.VarChar).Value = carrierNo
+            cmd.Parameters.Add("@carrierno", SqlDbType.VarChar).Value = "-"
             cmd.Connection.Open()
             Using rd = cmd.ExecuteReader()
                 While (rd.Read())
@@ -22,6 +22,7 @@
                     comment = CType(rd("comment"), String)
                 End While
             End Using
+            cmd.Connection.Close()
         End Using
         If is_pass = 1 Then
             result.IsPass = True

@@ -238,6 +238,7 @@
     <Content Include="Resources\gbFocus.png" />
     <Content Include="Resources\Greenbar.png" />
     <Content Include="Resources\PictureBoxStickerYeah.png" />
+    <Content Include="Resources\qr_code.png" />
     <None Include="Resources\PictureBoxStickerYeah1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

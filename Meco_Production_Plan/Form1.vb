@@ -80,6 +80,9 @@ Public Class Form1
         formload = True
         StratService()
         lbTimeUpdate.Text = "Update :" & Now
+
+        TextBoxQr.Focus()
+        PanelQr.BackColor = Color.LawnGreen
     End Sub
     Private Sub AutoPlan()
         PlMecoPlanData1TableAdapter1.FillBy(DBxDataSet11.PLMecoPlanData1, MecoPlanday, My.Settings.MCNo)
@@ -704,6 +707,7 @@ Public Class Form1
 
     Private Sub TimerNow_Tick(sender As Object, e As EventArgs) Handles TimerNow.Tick
         DNtime()
+
     End Sub
     Dim formload As Boolean = False
     Private Sub DNtime()
@@ -1762,32 +1766,49 @@ Public Class Form1
 
     End Sub
 
-    Private Sub BtSetupLot_Click(sender As Object, e As EventArgs) Handles btSetupLot.Click
-        'Using frm As New FormCheckSetupLot()
-        '    frm.ShowDialog()
-        'End Using
-        Dim lotNo As String = "1234A6789V"
-        Dim carrierNo As String
-        Using frm As New FormInputQrCode(FormInputQrCode.InputType.Slip252)
-            If frm.ShowDialog() <> DialogResult.OK Then
-                Return
-            End If
-            lotNo = frm.QrCode.Substring(30, 10).Trim()
-        End Using
-        Using frm As New FormInputQrCode(FormInputQrCode.InputType.Carrier)
-            If frm.ShowDialog() <> DialogResult.OK Then
-                Return
-            End If
-            carrierNo = frm.QrCode.Trim()
-        End Using
-        Dim result As resultBase = CheckSetupLot(lotNo, My.Settings.MCNo, carrierNo, lbOPNo.Text)
-        If Not result.IsPass Then
-            MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason & vbCr & result.Comment, "Stored", result.ErrorNo)
-        Else
-            Dim frm As MessageDialogAccept = New MessageDialogAccept("Setup", My.Settings.MCNo, lotNo)
-            frm.ShowDialog()
+    Private Sub TextBoxQr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxQr.KeyPress
+        If ProgressBar1.Value < ProgressBar1.Maximum Then
+            ProgressBar1.Value += 1
         End If
-        SaveCatchLog("lotNo:" + lotNo + ", MCNo:" + My.Settings.MCNo + ",carrierNo:" + carrierNo + ",opno:" + lbOPNo.Text, "CheckSetupLot")
+
+        If e.KeyChar = Chr(13) Then
+            Try
+                If TextBoxQr.Text.Length <> 252 Then
+                    MessageBox.Show("Qr Code ไม่ถูกต้อง [" & TextBoxQr.Text.Length.ToString & "]")
+                    TextBoxQr.Text = ""
+                    ProgressBar1.Value = 0
+                    Return
+                End If
+                Dim lotno As String = TextBoxQr.Text.Substring(30, 10).Trim()
+                Dim result As resultBase = CheckSetupLot(lotno, My.Settings.MCNo, lbOPNo.Text)
+                If Not result.IsPass Then
+                    MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason & vbCr & result.Comment, "Stored", result.ErrorNo)
+                Else
+                    Dim frm As MessageDialogAccept = New MessageDialogAccept("Setup", My.Settings.MCNo, lotno)
+                    frm.ShowDialog()
+                End If
+                TextBoxQr.Text = ""
+                ProgressBar1.Value = 0
+                SaveCatchLog("lotNo:" + lotno + ", MCNo:" + My.Settings.MCNo + ",opno:" + lbOPNo.Text, "CheckSetupLot")
+
+            Catch ex As Exception
+                SaveCatchLog(ex.Message.ToString, "TextBoxQr_KeyPress")
+            Finally
+                TextBoxQr.Focus()
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub TextBoxQr_Leave(sender As Object, e As EventArgs) Handles TextBoxQr.Leave
+        PanelQr.BackColor = Color.Red
+    End Sub
+
+    Private Sub PictureBoxQr_Click(sender As Object, e As EventArgs) Handles PictureBoxQr.Click
+        PanelQr.BackColor = Color.LawnGreen
+        ProgressBar1.Value = 0
+        TextBoxQr.Text = ""
+        TextBoxQr.Focus()
     End Sub
 #End Region
 End Class
