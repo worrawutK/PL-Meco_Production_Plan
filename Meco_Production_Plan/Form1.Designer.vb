@@ -75,18 +75,18 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
-        Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
-        Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
-        Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
-        Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
-        Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
         Me.TextBoxQr = New System.Windows.Forms.TextBox()
         Me.PictureBoxQr = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.PanelQr = New System.Windows.Forms.Panel()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
+        Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
+        Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
+        Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
+        Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
+        Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,10 +95,10 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelQr.SuspendLayout()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DayNight
@@ -642,32 +642,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.10"
-        '
-        'TestWipSumTableAdapter1
-        '
-        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoCapaDataTableAdapter1
-        '
-        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
-        '
-        'ResultMecoTableAdapter1
-        '
-        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanGroupTableAdapter1
-        '
-        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
-        '
-        'DBxDataSet11
-        '
-        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
-        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PlMecoPlanData1TableAdapter1
-        '
-        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
+        Me.Label5.Text = "Ver 1.11"
         '
         'TextBoxQr
         '
@@ -718,6 +693,31 @@ Partial Class Form1
         Me.ProgressBar1.Size = New System.Drawing.Size(1833, 6)
         Me.ProgressBar1.TabIndex = 40
         '
+        'TestWipSumTableAdapter1
+        '
+        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoCapaDataTableAdapter1
+        '
+        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
+        '
+        'ResultMecoTableAdapter1
+        '
+        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoPlanGroupTableAdapter1
+        '
+        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
+        '
+        'DBxDataSet11
+        '
+        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
+        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlMecoPlanData1TableAdapter1
+        '
+        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -763,10 +763,10 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelQr.ResumeLayout(False)
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

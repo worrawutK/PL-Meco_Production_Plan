@@ -7195,11 +7195,14 @@ Namespace DBxDataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        COUNT(*) AS Result, TransactionData.Package"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PLData"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TransactionData ON PLData.LotNo = Transact"& _ 
-                "ionData.LotNo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PLData.MCNo = @MCNo) AND (PLData.LotEndTime > @WIPS"& _ 
-                "rartTime) AND (PLData.LotEndTime < @WIPEndTime)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY TransactionData.Packag"& _ 
-                "e"
+            Me._commandCollection(0).CommandText = "SELECT        COUNT(*) AS Result, CASE WHEN pkg.name IS NULL THEN td.Package ELSE"& _ 
+                " pkg.name END AS Package"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            PLData FULL OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
+                "           APCSProDB.trans.lots ON APCSProDB.trans.lots.lot_no = PLData.LotNo LE"& _ 
+                "FT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TransactionData AS td ON td.LotNo = PLDa"& _ 
+                "ta.LotNo LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         APCSProDB.method.packages AS "& _ 
+                "pkg ON pkg.id = APCSProDB.trans.lots.act_package_id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (PLData.MCNo ="& _ 
+                " @MCNo) AND (PLData.LotEndTime > @WIPSrartTime) AND (PLData.LotEndTime < @WIPEnd"& _ 
+                "Time)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY td.Package, pkg.name"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MCNo", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "MCNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@WIPSrartTime", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "LotEndTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

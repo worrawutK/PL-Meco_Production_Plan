@@ -33,9 +33,6 @@
     <Setting Name="Percent" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">70</Value>
     </Setting>
-    <Setting Name="MCNo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PL-M-03</Value>
-    </Setting>
     <Setting Name="PlanDayDivide" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
@@ -46,6 +43,9 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=DBx;User ID=system;Password=p@$$w0rd</Value>
+    </Setting>
+    <Setting Name="MCNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PL-M-04</Value>
     </Setting>
   </Settings>
 </SettingsFile>
