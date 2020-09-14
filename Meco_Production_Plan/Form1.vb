@@ -653,7 +653,7 @@ Public Class Form1
             'Data Result
             Dim CheckResule As Boolean = False
             For Each dataResult As DBxDataSet1.ResultMecoRow In DBxDataSet11.ResultMeco
-                If Data.Package = dataResult.Package Then
+                If Data.Package.Trim = dataResult.Package.Trim() Then
                     '  Resule += Resule
                     Data.Result = dataResult.Result
                     CheckResule = True
