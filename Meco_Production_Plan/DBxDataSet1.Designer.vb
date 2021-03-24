@@ -3283,7 +3283,7 @@ Partial Public Class DBxDataSet1
             Me.columnMaterial.MaxLength = 20
             Me.columnABNormal.MaxLength = 20
             Me.columnOPNo.MaxLength = 8
-            Me.columnMagazineNo.MaxLength = 10
+            Me.columnMagazineNo.MaxLength = 11
             Me.columnSelfConVersion.MaxLength = 50
             Me.columnNetVersion.MaxLength = 50
             Me.columnOPJudgement.MaxLength = 8
