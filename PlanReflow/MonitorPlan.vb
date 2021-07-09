@@ -51,11 +51,18 @@ Public Class MonitorPlan
                 '_TableMCNo.Columns.Add("RFWIP")
                 _TableMCNo.ReadXml(McPath.PahtData)
 
-                RfwipTableAdapter1.Fill(DBxDataSet11.RFWIP)
+                Dim reflowWipData = GetReflowWIP(0)
+
+                'RfwipTableAdapter1.Fill(DBxDataSet11.RFWIP)
                 For Each data As DBxDataSet1.PLMecoPlanGroupRow In _TableMCNo
                     Dim CountRFWIP As Int16 = 0
-                    For Each RFWIP As DBxDataSet1.RFWIPRow In DBxDataSet11.RFWIP
-                        If data.Package Like "*" & RFWIP.Package & "*" And Not ListPKGNotReflow.Contains(data.Package) Then
+                    'For Each RFWIP As DBxDataSet1.RFWIPRow In DBxDataSet11.RFWIP
+                    '    If data.Package Like "*" & RFWIP.Package & "*" And Not ListPKGNotReflow.Contains(data.Package) Then
+                    '        CountRFWIP += 1
+                    '    End If
+                    'Next
+                    For Each RFWIP1 In reflowWipData
+                        If data.Package Like "*" & RFWIP1.Package & "*" And Not ListPKGNotReflow.Contains(data.Package) Then
                             CountRFWIP += 1
                         End If
                     Next
@@ -94,6 +101,82 @@ Public Class MonitorPlan
             'MsgBox(ex.Message.ToString())
         End Try
     End Sub
+    Private c_ReflowData As New List(Of ReflowData)
+    Private Function GetReflowWIP(jobId As Integer) As List(Of ReflowData)
+        Dim dataTable As New DataTable
+
+        Using cmd As New SqlClient.SqlCommand
+            cmd.Connection = New SqlClient.SqlConnection("Data Source = 172.16.0.102; Initial Catalog = StoredProcedureDB; Persist Security Info = True; User ID = system; Password = 'p@$$w0rd'")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "[atom].[sp_get_user_main]"
+            cmd.Parameters.Add("@process", SqlDbType.VarChar).Value = "RF"
+            cmd.Parameters.Add("@wip_state", SqlDbType.Int).Value = 20
+            'cmd.Parameters.Add("@process_state", SqlDbType.Int).Value = "Abnormal WIP Wait"
+            cmd.Connection.Open()
+            Using reader As SqlClient.SqlDataReader = cmd.ExecuteReader()
+                If reader.HasRows Then
+                    dataTable.Load(reader)
+                    '                    DataRow row = tmpDataTable.Rows[0];
+                    '                    ret = (bool)row["enabled"];
+                End If
+
+            End Using
+            cmd.Connection.Close()
+        End Using
+        Dim reflowData As New List(Of ReflowData)
+        For Each lotdatas As DataRow In dataTable.Rows
+            Dim lotdata As New ReflowData
+            lotdata.LotNo = CType(lotdatas("lot_no"), String).Trim
+            lotdata.JobName = CType(lotdatas("operation"), String).Trim
+            lotdata.Package = CType(lotdatas("package"), String).Trim
+            lotdata.Device = CType(lotdatas("device"), String).Trim
+
+            Dim _lotState As New LotState?
+            Select Case lotdatas("process_state").ToString().ToUpper().Trim()
+                Case "WAIT"
+                    _lotState = LotState.WIP
+                Case "ABNORMAL WIP"
+                    _lotState = LotState.AbnormalWIP
+                Case "PROCESSING"
+                    _lotState = LotState.Processing
+            End Select
+
+            Dim _lotQualityState As New LotQualityState?
+            Select Case lotdatas("quality_state").ToString().ToUpper().Trim()
+                Case "NORMAL"
+                    _lotQualityState = LotQualityState.Normal
+                Case "HOLD"
+                    _lotQualityState = LotQualityState.Hold
+                Case "SPECIAL FLOW"
+                    _lotQualityState = LotQualityState.SpecialFlow
+            End Select
+
+            lotdata.ProcessState = _lotState
+            lotdata.QualityState = _lotQualityState
+            reflowData.Add(lotdata)
+        Next
+
+
+        'Using (SqlCommand cmd = New SqlCommand())
+        '        {
+        '            cmd.Connection = New SqlConnection("Data Source = 172.16.0.102; Initial Catalog = StoredProcedureDB; Persist Security Info = True; User ID = system; Password = 'p@$$w0rd'");
+        '            cmd.CommandType = CommandType.StoredProcedure;
+        '            cmd.CommandText = "[cellcon].[sp_get_frame_control]";
+        '            cmd.Parameters.Add("@job", SqlDbType.VarChar).Value = jobName;
+        '            cmd.Connection.Open();
+        '            Using (SqlDataReader rd = cmd.ExecuteReader())
+        '            {
+        '                If (rd.HasRows) Then
+        '                                    {
+        '                    tmpDataTable.Load(rd);
+        '                    DataRow row = tmpDataTable.Rows[0];
+        '                    ret = (bool)row["enabled"];
+        '                }
+        '            }
+        '            cmd.Connection.Close();
+        '        }
+        Return reflowData
+    End Function
     Public DIR_LOG As String = My.Application.Info.DirectoryPath & "\LOG"
     Public Sub SaveCatchLog(ByVal message As String, ByVal fnName As String)
         If Directory.Exists(DIR_LOG & "\BackUp") = False Then

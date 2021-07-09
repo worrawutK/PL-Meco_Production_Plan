@@ -23,6 +23,7 @@ Partial Class MonitorPlan
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MonitorPlan))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LabelTimeUpdate = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -31,6 +32,10 @@ Partial Class MonitorPlan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelVer = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.MecoNo01 = New PlanReflow.UserControlViewPlan()
+        Me.MecoNo02 = New PlanReflow.UserControlViewPlan()
+        Me.MecoNo03 = New PlanReflow.UserControlViewPlan()
+        Me.MecoNo04 = New PlanReflow.UserControlViewPlan()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,10 +45,6 @@ Partial Class MonitorPlan
         Me.RfwipTableAdapter1 = New PlanReflow.DBxDataSet1TableAdapters.RFWIPTableAdapter()
         Me.DBxDataSet11 = New PlanReflow.DBxDataSet1()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.MecoNo01 = New PlanReflow.UserControlViewPlan()
-        Me.MecoNo02 = New PlanReflow.UserControlViewPlan()
-        Me.MecoNo03 = New PlanReflow.UserControlViewPlan()
-        Me.MecoNo04 = New PlanReflow.UserControlViewPlan()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,7 +128,7 @@ Partial Class MonitorPlan
         Me.LabelVer.Name = "LabelVer"
         Me.LabelVer.Size = New System.Drawing.Size(44, 13)
         Me.LabelVer.TabIndex = 56
-        Me.LabelVer.Text = "Ver1.03"
+        Me.LabelVer.Text = "Ver2.00"
         '
         'Panel2
         '
@@ -139,6 +140,42 @@ Partial Class MonitorPlan
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1342, 580)
         Me.Panel2.TabIndex = 55
+        '
+        'MecoNo01
+        '
+        Me.MecoNo01.Location = New System.Drawing.Point(1006, 16)
+        Me.MecoNo01.Machine = Nothing
+        Me.MecoNo01.MachineName = Nothing
+        Me.MecoNo01.Name = "MecoNo01"
+        Me.MecoNo01.Size = New System.Drawing.Size(332, 557)
+        Me.MecoNo01.TabIndex = 0
+        '
+        'MecoNo02
+        '
+        Me.MecoNo02.Location = New System.Drawing.Point(672, 16)
+        Me.MecoNo02.Machine = Nothing
+        Me.MecoNo02.MachineName = Nothing
+        Me.MecoNo02.Name = "MecoNo02"
+        Me.MecoNo02.Size = New System.Drawing.Size(332, 557)
+        Me.MecoNo02.TabIndex = 0
+        '
+        'MecoNo03
+        '
+        Me.MecoNo03.Location = New System.Drawing.Point(338, 16)
+        Me.MecoNo03.Machine = Nothing
+        Me.MecoNo03.MachineName = Nothing
+        Me.MecoNo03.Name = "MecoNo03"
+        Me.MecoNo03.Size = New System.Drawing.Size(332, 557)
+        Me.MecoNo03.TabIndex = 0
+        '
+        'MecoNo04
+        '
+        Me.MecoNo04.Location = New System.Drawing.Point(4, 16)
+        Me.MecoNo04.Machine = Nothing
+        Me.MecoNo04.MachineName = Nothing
+        Me.MecoNo04.Name = "MecoNo04"
+        Me.MecoNo04.Size = New System.Drawing.Size(332, 557)
+        Me.MecoNo04.TabIndex = 0
         '
         'Label7
         '
@@ -209,42 +246,6 @@ Partial Class MonitorPlan
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
-        '
-        'MecoNo01
-        '
-        Me.MecoNo01.Location = New System.Drawing.Point(1006, 16)
-        Me.MecoNo01.Machine = Nothing
-        Me.MecoNo01.MachineName = Nothing
-        Me.MecoNo01.Name = "MecoNo01"
-        Me.MecoNo01.Size = New System.Drawing.Size(332, 557)
-        Me.MecoNo01.TabIndex = 0
-        '
-        'MecoNo02
-        '
-        Me.MecoNo02.Location = New System.Drawing.Point(672, 16)
-        Me.MecoNo02.Machine = Nothing
-        Me.MecoNo02.MachineName = Nothing
-        Me.MecoNo02.Name = "MecoNo02"
-        Me.MecoNo02.Size = New System.Drawing.Size(332, 557)
-        Me.MecoNo02.TabIndex = 0
-        '
-        'MecoNo03
-        '
-        Me.MecoNo03.Location = New System.Drawing.Point(338, 16)
-        Me.MecoNo03.Machine = Nothing
-        Me.MecoNo03.MachineName = Nothing
-        Me.MecoNo03.Name = "MecoNo03"
-        Me.MecoNo03.Size = New System.Drawing.Size(332, 557)
-        Me.MecoNo03.TabIndex = 0
-        '
-        'MecoNo04
-        '
-        Me.MecoNo04.Location = New System.Drawing.Point(4, 16)
-        Me.MecoNo04.Machine = Nothing
-        Me.MecoNo04.MachineName = Nothing
-        Me.MecoNo04.Name = "MecoNo04"
-        Me.MecoNo04.Size = New System.Drawing.Size(332, 557)
-        Me.MecoNo04.TabIndex = 0
         '
         'MonitorPlan
         '
