@@ -45,7 +45,7 @@
       <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=DBx;User ID=system;Password=p@$$w0rd</Value>
     </Setting>
     <Setting Name="MCNo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PL-M-02</Value>
+      <Value Profile="(Default)">PL-M-01</Value>
     </Setting>
   </Settings>
 </SettingsFile>

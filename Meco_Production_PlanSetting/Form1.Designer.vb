@@ -57,6 +57,7 @@ Partial Class Form1
         Me.GroupPKGDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PLMecoPlanDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btSaveEditPlan = New System.Windows.Forms.Button()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.MCNoEdit3 = New System.Windows.Forms.RadioButton()
         Me.MCNoEdit2 = New System.Windows.Forms.RadioButton()
         Me.MCNoEdit1 = New System.Windows.Forms.RadioButton()
@@ -152,7 +153,12 @@ Partial Class Form1
         Me.ToolTypeListTableAdapter1 = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.ToolTypeListTableAdapter()
         Me.TableAdapterManager = New Meco_Production_PlanSetting.DBxDataSetTableAdapters.TableAdapterManager()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.MCNoEx5 = New System.Windows.Forms.RadioButton()
+        Me.MCNoEx6 = New System.Windows.Forms.RadioButton()
+        Me.MCNo5 = New System.Windows.Forms.RadioButton()
+        Me.MCNo6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         CType(Me.ViewCapa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PLMecoCapaDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -245,6 +251,8 @@ Partial Class Form1
         '
         'AddPlan
         '
+        Me.AddPlan.Controls.Add(Me.MCNoEx6)
+        Me.AddPlan.Controls.Add(Me.MCNoEx5)
         Me.AddPlan.Controls.Add(Me.Panel1)
         Me.AddPlan.Controls.Add(Me.MCNoEx4)
         Me.AddPlan.Controls.Add(Me.MCNoEx3)
@@ -263,6 +271,8 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.MCNo6)
+        Me.Panel1.Controls.Add(Me.MCNo5)
         Me.Panel1.Controls.Add(Me.DatePlan)
         Me.Panel1.Controls.Add(Me.MCNo1)
         Me.Panel1.Controls.Add(Me.MCNo2)
@@ -271,7 +281,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Location = New System.Drawing.Point(21, 466)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(320, 96)
+        Me.Panel1.Size = New System.Drawing.Size(320, 134)
         Me.Panel1.TabIndex = 12
         '
         'DatePlan
@@ -325,7 +335,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 68)
+        Me.Button1.Location = New System.Drawing.Point(7, 108)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
@@ -423,6 +433,8 @@ Partial Class Form1
         '
         'EditPlan
         '
+        Me.EditPlan.Controls.Add(Me.RadioButton3)
+        Me.EditPlan.Controls.Add(Me.RadioButton2)
         Me.EditPlan.Controls.Add(Me.ViewEdit)
         Me.EditPlan.Controls.Add(Me.btSaveEditPlan)
         Me.EditPlan.Controls.Add(Me.RadioButton1)
@@ -494,10 +506,20 @@ Partial Class Form1
         Me.btSaveEditPlan.Text = "Save"
         Me.btSaveEditPlan.UseVisualStyleBackColor = True
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(234, 18)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton1.TabIndex = 2
+        Me.RadioButton1.Text = "PL-M-04"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
         'MCNoEdit3
         '
         Me.MCNoEdit3.AutoSize = True
-        Me.MCNoEdit3.Location = New System.Drawing.Point(213, 18)
+        Me.MCNoEdit3.Location = New System.Drawing.Point(163, 18)
         Me.MCNoEdit3.Name = "MCNoEdit3"
         Me.MCNoEdit3.Size = New System.Drawing.Size(65, 17)
         Me.MCNoEdit3.TabIndex = 2
@@ -507,7 +529,7 @@ Partial Class Form1
         'MCNoEdit2
         '
         Me.MCNoEdit2.AutoSize = True
-        Me.MCNoEdit2.Location = New System.Drawing.Point(117, 18)
+        Me.MCNoEdit2.Location = New System.Drawing.Point(92, 18)
         Me.MCNoEdit2.Name = "MCNoEdit2"
         Me.MCNoEdit2.Size = New System.Drawing.Size(65, 17)
         Me.MCNoEdit2.TabIndex = 2
@@ -528,7 +550,7 @@ Partial Class Form1
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(370, 15)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(549, 14)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 1
@@ -1398,15 +1420,65 @@ Partial Class Form1
         Me.Label1.Text = "Ver1.01"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'RadioButton1
+        'MCNoEx5
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(295, 18)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
-        Me.RadioButton1.TabIndex = 2
-        Me.RadioButton1.Text = "PL-M-04"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.MCNoEx5.AutoSize = True
+        Me.MCNoEx5.Location = New System.Drawing.Point(303, 19)
+        Me.MCNoEx5.Name = "MCNoEx5"
+        Me.MCNoEx5.Size = New System.Drawing.Size(65, 17)
+        Me.MCNoEx5.TabIndex = 13
+        Me.MCNoEx5.Text = "PL-M-05"
+        Me.MCNoEx5.UseVisualStyleBackColor = True
+        '
+        'MCNoEx6
+        '
+        Me.MCNoEx6.AutoSize = True
+        Me.MCNoEx6.Location = New System.Drawing.Point(374, 19)
+        Me.MCNoEx6.Name = "MCNoEx6"
+        Me.MCNoEx6.Size = New System.Drawing.Size(65, 17)
+        Me.MCNoEx6.TabIndex = 14
+        Me.MCNoEx6.Text = "PL-M-06"
+        Me.MCNoEx6.UseVisualStyleBackColor = True
+        '
+        'MCNo5
+        '
+        Me.MCNo5.AutoSize = True
+        Me.MCNo5.Location = New System.Drawing.Point(7, 68)
+        Me.MCNo5.Name = "MCNo5"
+        Me.MCNo5.Size = New System.Drawing.Size(65, 17)
+        Me.MCNo5.TabIndex = 7
+        Me.MCNo5.Text = "PL-M-05"
+        Me.MCNo5.UseVisualStyleBackColor = True
+        '
+        'MCNo6
+        '
+        Me.MCNo6.AutoSize = True
+        Me.MCNo6.Location = New System.Drawing.Point(78, 68)
+        Me.MCNo6.Name = "MCNo6"
+        Me.MCNo6.Size = New System.Drawing.Size(65, 17)
+        Me.MCNo6.TabIndex = 8
+        Me.MCNo6.Text = "PL-M-06"
+        Me.MCNo6.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(305, 18)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton2.TabIndex = 4
+        Me.RadioButton2.Text = "PL-M-05"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(376, 18)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton3.TabIndex = 5
+        Me.RadioButton3.Text = "PL-M-06"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1591,4 +1663,10 @@ Partial Class Form1
     Friend WithEvents MCNo4 As RadioButton
     Friend WithEvents MCNoEx4 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents MCNoEx5 As RadioButton
+    Friend WithEvents MCNoEx6 As RadioButton
+    Friend WithEvents MCNo6 As RadioButton
+    Friend WithEvents MCNo5 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
 End Class

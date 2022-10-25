@@ -46,7 +46,7 @@
     End Sub
     Dim MCNo As String = Nothing
     Dim val As RadioButton
-    Private Sub MCNo1_CheckedChanged(sender As Object, e As EventArgs) Handles MCNo1.CheckedChanged, MCNo3.CheckedChanged, MCNo2.CheckedChanged, MCNo4.CheckedChanged
+    Private Sub MCNo1_CheckedChanged(sender As Object, e As EventArgs) Handles MCNo1.CheckedChanged, MCNo3.CheckedChanged, MCNo2.CheckedChanged, MCNo4.CheckedChanged, MCNo6.CheckedChanged, MCNo5.CheckedChanged
 
 
         val = CType(sender, RadioButton)
@@ -115,7 +115,7 @@
         ViewPlan.Columns(6).Width = 50
     End Sub
 
-    Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateExPlan.ValueChanged, MCNoEx1.CheckedChanged, MCNoEx2.CheckedChanged, MCNoEx3.CheckedChanged, MCNoEx4.CheckedChanged
+    Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateExPlan.ValueChanged, MCNoEx1.CheckedChanged, MCNoEx2.CheckedChanged, MCNoEx3.CheckedChanged, MCNoEx4.CheckedChanged, MCNoEx6.CheckedChanged, MCNoEx5.CheckedChanged
         '  PLMecoPlanDataTableAdapter.FillBy(DBxDataSet.PLMecoPlanData, DateTimePicker3.Value.Date)
         Try
             Dim Val As RadioButton = CType(sender, RadioButton)
@@ -197,7 +197,7 @@
 
     End Sub
     Dim valDate As DateTimePicker
-    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged, MCNoEdit3.CheckedChanged, MCNoEdit2.CheckedChanged, MCNoEdit1.CheckedChanged, RadioButton1.CheckedChanged
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged, MCNoEdit3.CheckedChanged, MCNoEdit2.CheckedChanged, MCNoEdit1.CheckedChanged, RadioButton1.CheckedChanged, RadioButton3.CheckedChanged, RadioButton2.CheckedChanged
         Try
             Dim MCNoEditRB As RadioButton = CType(sender, RadioButton)
             MCNoEdit = MCNoEditRB.Text
