@@ -32,6 +32,10 @@ Public Class Form1
             DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
         ElseIf My.Settings.MCNo = "PL-M-04" Then
             DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo04.xml"
+        ElseIf My.Settings.MCNo = "PL-M-05" Then
+            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo05.xml"
+        ElseIf My.Settings.MCNo = "PL-M-06" Then
+            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo06.xml"
         End If
 
         date1 = Date.Now
@@ -134,6 +138,10 @@ Public Class Form1
             Label2.Text = "Meco#3 Machine Information"
         ElseIf My.Settings.MCNo = "PL-M-04" Then
             Label2.Text = "Meco#4 Machine Information"
+        ElseIf My.Settings.MCNo = "PL-M-05" Then
+            Label2.Text = "Meco#5 Machine Information"
+        ElseIf My.Settings.MCNo = "PL-M-06" Then
+            Label2.Text = "Meco#6 Machine Information"
         End If
         Dim date1 As Date = Date.Now
 

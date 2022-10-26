@@ -209,7 +209,7 @@ Partial Class Form1
         Me.lbOPNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbOPNo.Location = New System.Drawing.Point(1646, 480)
         Me.lbOPNo.Name = "lbOPNo"
-        Me.lbOPNo.Size = New System.Drawing.Size(51, 16)
+        Me.lbOPNo.Size = New System.Drawing.Size(50, 16)
         Me.lbOPNo.TabIndex = 7
         Me.lbOPNo.Text = "OP No."
         Me.lbOPNo.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -642,7 +642,7 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.13"
+        Me.Label5.Text = "Ver 1.14"
         '
         'TextBoxQr
         '
