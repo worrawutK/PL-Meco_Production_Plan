@@ -27,6 +27,9 @@ Partial Class UserControlViewPlan
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PlMecoPlanGroupTableAdapter1 = New PlanReflow.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
+        Me.DBxDataSet11 = New PlanReflow.DBxDataSet1()
         Me.Period = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Package = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DayPlan = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,9 +37,6 @@ Partial Class UserControlViewPlan
         Me.WIP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RFWIP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupPKG = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PlMecoPlanGroupTableAdapter1 = New PlanReflow.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
-        Me.DBxDataSet11 = New PlanReflow.DBxDataSet1()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,64 +83,6 @@ Partial Class UserControlViewPlan
         Me.DataGridView1.Size = New System.Drawing.Size(657, 596)
         Me.DataGridView1.TabIndex = 35
         '
-        'Period
-        '
-        Me.Period.DataPropertyName = "Period"
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        Me.Period.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Period.HeaderText = "Period"
-        Me.Period.Name = "Period"
-        Me.Period.ReadOnly = True
-        Me.Period.Width = 80
-        '
-        'Package
-        '
-        Me.Package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Package.DataPropertyName = "Package"
-        Me.Package.HeaderText = "Package"
-        Me.Package.Name = "Package"
-        Me.Package.ReadOnly = True
-        '
-        'DayPlan
-        '
-        Me.DayPlan.DataPropertyName = "DayPlan"
-        Me.DayPlan.HeaderText = "P"
-        Me.DayPlan.Name = "DayPlan"
-        Me.DayPlan.ReadOnly = True
-        Me.DayPlan.Width = 30
-        '
-        'RESULT
-        '
-        Me.RESULT.DataPropertyName = "RESULT"
-        Me.RESULT.HeaderText = "R"
-        Me.RESULT.Name = "RESULT"
-        Me.RESULT.ReadOnly = True
-        Me.RESULT.Width = 30
-        '
-        'WIP
-        '
-        Me.WIP.DataPropertyName = "WIP"
-        Me.WIP.HeaderText = "MW"
-        Me.WIP.Name = "WIP"
-        Me.WIP.ReadOnly = True
-        Me.WIP.Width = 30
-        '
-        'RFWIP
-        '
-        Me.RFWIP.DataPropertyName = "RFWIP"
-        Me.RFWIP.HeaderText = "RW"
-        Me.RFWIP.Name = "RFWIP"
-        Me.RFWIP.ReadOnly = True
-        Me.RFWIP.Width = 30
-        '
-        'GroupPKG
-        '
-        Me.GroupPKG.DataPropertyName = "GroupPKG"
-        Me.GroupPKG.HeaderText = "GroupPKG"
-        Me.GroupPKG.Name = "GroupPKG"
-        Me.GroupPKG.ReadOnly = True
-        Me.GroupPKG.Visible = False
-        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.MintCream
@@ -163,6 +105,64 @@ Partial Class UserControlViewPlan
         Me.DBxDataSet11.DataSetName = "DBxDataSet1"
         Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Period
+        '
+        Me.Period.DataPropertyName = "Period"
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        Me.Period.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Period.HeaderText = "Period"
+        Me.Period.Name = "Period"
+        Me.Period.ReadOnly = True
+        Me.Period.Width = 75
+        '
+        'Package
+        '
+        Me.Package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Package.DataPropertyName = "Package"
+        Me.Package.HeaderText = "Package"
+        Me.Package.Name = "Package"
+        Me.Package.ReadOnly = True
+        '
+        'DayPlan
+        '
+        Me.DayPlan.DataPropertyName = "DayPlan"
+        Me.DayPlan.HeaderText = "P"
+        Me.DayPlan.Name = "DayPlan"
+        Me.DayPlan.ReadOnly = True
+        Me.DayPlan.Width = 28
+        '
+        'RESULT
+        '
+        Me.RESULT.DataPropertyName = "RESULT"
+        Me.RESULT.HeaderText = "R"
+        Me.RESULT.Name = "RESULT"
+        Me.RESULT.ReadOnly = True
+        Me.RESULT.Width = 28
+        '
+        'WIP
+        '
+        Me.WIP.DataPropertyName = "WIP"
+        Me.WIP.HeaderText = "MW"
+        Me.WIP.Name = "WIP"
+        Me.WIP.ReadOnly = True
+        Me.WIP.Width = 28
+        '
+        'RFWIP
+        '
+        Me.RFWIP.DataPropertyName = "RFWIP"
+        Me.RFWIP.HeaderText = "RW"
+        Me.RFWIP.Name = "RFWIP"
+        Me.RFWIP.ReadOnly = True
+        Me.RFWIP.Width = 28
+        '
+        'GroupPKG
+        '
+        Me.GroupPKG.DataPropertyName = "GroupPKG"
+        Me.GroupPKG.HeaderText = "GroupPKG"
+        Me.GroupPKG.Name = "GroupPKG"
+        Me.GroupPKG.ReadOnly = True
+        Me.GroupPKG.Visible = False
+        '
         'UserControlViewPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -180,6 +180,8 @@ Partial Class UserControlViewPlan
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents PlMecoPlanGroupTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter
+    Friend WithEvents DBxDataSet11 As DBxDataSet1
     Friend WithEvents Period As DataGridViewTextBoxColumn
     Friend WithEvents Package As DataGridViewTextBoxColumn
     Friend WithEvents DayPlan As DataGridViewTextBoxColumn
@@ -187,6 +189,4 @@ Partial Class UserControlViewPlan
     Friend WithEvents WIP As DataGridViewTextBoxColumn
     Friend WithEvents RFWIP As DataGridViewTextBoxColumn
     Friend WithEvents GroupPKG As DataGridViewTextBoxColumn
-    Friend WithEvents PlMecoPlanGroupTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter
-    Friend WithEvents DBxDataSet11 As DBxDataSet1
 End Class
