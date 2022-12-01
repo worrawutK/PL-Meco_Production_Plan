@@ -126,7 +126,7 @@ Public Class Form1
 
     Dim DataTablePathTOP As String
     Private Sub selects()
-        '  LoadPicture()
+        LoadPicture()
 
 
 

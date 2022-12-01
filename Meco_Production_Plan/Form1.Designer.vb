@@ -105,7 +105,7 @@ Partial Class Form1
         '
         Me.DayNight.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DayNight.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.DayNight.Location = New System.Drawing.Point(1171, 120)
+        Me.DayNight.Location = New System.Drawing.Point(543, 120)
         Me.DayNight.Name = "DayNight"
         Me.DayNight.Size = New System.Drawing.Size(352, 25)
         Me.DayNight.TabIndex = 20
@@ -128,7 +128,7 @@ Partial Class Form1
         '
         Me.Time.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Time.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Time.Location = New System.Drawing.Point(1513, 131)
+        Me.Time.Location = New System.Drawing.Point(885, 131)
         Me.Time.Name = "Time"
         Me.Time.Size = New System.Drawing.Size(352, 25)
         Me.Time.TabIndex = 18
@@ -638,7 +638,7 @@ Partial Class Form1
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(1868, 1063)
+        Me.Label5.Location = New System.Drawing.Point(1240, 715)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
@@ -722,7 +722,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.ClientSize = New System.Drawing.Size(1292, 732)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.PanelQr)
         Me.Controls.Add(Me.TextBoxQr)
