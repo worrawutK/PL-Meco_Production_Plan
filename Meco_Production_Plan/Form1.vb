@@ -3,6 +3,16 @@ Imports System.Net
 Imports System.Data.SqlClient
 Imports System.Security.Permissions
 Imports System.ComponentModel
+Imports System.Text
+Imports System.Web.Services.Description
+Imports System.Net.Security
+Imports System.Web.Script.Serialization
+Imports MessageDialog
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports System.Collections.Specialized.BitVector32
+Imports System.Security.Policy
+Imports Newtonsoft.Json.Linq
+
 Public Class Form1
     Dim _TablePlanDay As DBxDataSet1.PLMecoPlanDataDataTable
     Dim _TableTOP3 As DataTable 'As DBxDataSet1.PLMecoPlanDataDataTable
@@ -126,7 +136,7 @@ Public Class Form1
 
     Dim DataTablePathTOP As String
     Private Sub selects()
-        LoadPicture()
+        'LoadPicture()
 
 
 
@@ -966,6 +976,7 @@ Public Class Form1
 
     End Sub
     Dim PKGRun As String
+    Dim c_OldOPNo As String
     Private Sub LoadPicture()
         Dim PLData As New DBxDataSet1TableAdapters.PLDataTableAdapter
         Dim Pltable As DBxDataSet1.PLDataDataTable = PLData.GetData(My.Settings.MCNo, MecoPlanday)
@@ -981,21 +992,177 @@ Public Class Form1
             OPNo = Pltable.Rows(0)("OPNo").ToString()
 
         End If
-
+        If c_OldOPNo = OPNo Then
+            Return
+        End If
         lbOPNo.Text = OPNo
 
-        Dim oldImage As Image = pbOpno.BackgroundImage
+        Try
+            Dim oldImage As Image = pbOpno.BackgroundImage
 
-        Dim tClient As WebClient = New WebClient
+            Dim tClient As WebClient = New WebClient
 
-        Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            'Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            Dim tImage2 As Bitmap = Bitmap.FromStream(New MemoryStream(CallApi_GetUserAuthrization(OPNo)))  'Bitmap.FromStream(New MemoryStream(APISendGET(OPNo)))
+            pbOpno.BackgroundImage = tImage2
 
-        pbOpno.BackgroundImage = tImage
+            If oldImage Is Nothing Then
+                oldImage.Dispose()
+            End If
 
-        If oldImage Is Nothing Then
-            oldImage.Dispose()
-        End If
+
+
+
+            'Using (var streamWriter = New StreamWriter(httpRequest.GetRequestStream()))
+            '{
+            '    StreamWriter.Write(json);
+            '}
+
+            'String jsonResult = "";
+            'var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            'Using (var streamReader = New StreamReader(httpResponse.GetResponseStream()))
+            '{
+            '    jsonResult = StreamReader.ReadToEnd();
+            '}
+
+            'ApiLotInfo apiResultInfo = New JavaScriptSerializer().Deserialize < ApiLotInfo > (jsonResult);
+            'Return apiResultInfo;
+
+        Catch ex As Exception
+            SaveCatchLog(ex.Message, "http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")
+        End Try
+
     End Sub
+    Public Class UserInfo
+        Private c_OpNo As String
+        Public Property emp_Num() As String
+            Get
+                Return c_OpNo
+            End Get
+            Set(ByVal value As String)
+                c_OpNo = value
+            End Set
+        End Property
+        Private c_Permission As String
+        Public Property permission() As String
+            Get
+                Return c_Permission
+            End Get
+            Set(ByVal value As String)
+                c_Permission = value
+            End Set
+        End Property
+    End Class
+    Private Function APISendGET(opNo As String) As Byte()
+        Dim webRequestSetting As New HttpWebRequestSetting
+        webRequestSetting.UserName = "000000"
+        webRequestSetting.Password = "P@$$w0rd"
+        webRequestSetting.Url = "http://rohmapi/api/Man/GetUserIdentification"
+
+        Dim jsonResult As String = ""
+        Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(webRequestSetting.Url), HttpWebRequest)
+        httpRequest.Credentials = New NetworkCredential(webRequestSetting.UserName, webRequestSetting.Password)
+        httpRequest.Method = "POST"
+        httpRequest.ContentType = "application/json; charset=utf-8"
+        httpRequest.Headers.Add("Authorization", "Bearer ")
+
+        Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = opNo, .permission = ""})
+        Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
+            streamWriter.Write(json)
+        End Using
+
+
+        Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+
+        Using streamReader As New StreamReader(httpResponse.GetResponseStream())
+            jsonResult = streamReader.ReadToEnd()
+            Using ms As New MemoryStream
+                streamReader.BaseStream.CopyTo(ms)
+                Return ms.ToArray()
+            End Using
+        End Using
+
+        'Dim student0 As New Object
+        'With student0
+        '    .First = "Michael"
+        '    .Last = "Tucker"
+        'End With
+
+
+
+        'Dim jsonResult As String = ""
+        ' Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+
+        'Console.WriteLine(httpResponse.StatusCode);
+        'Dim js As System.Web.Script.Serialization.JavaScriptSerializer = New System.Web.Script.Serialization.JavaScriptSerializer()
+        ''js.Deserialize<ESCard>(jsonResult); 
+        'Return js.Deserialize(Of String)(jsonResult)
+    End Function
+    Public Function CallApi_GetUserAuthrization(emp_no As String) As Byte()
+
+        Dim url As String = "http://rohmapi/api/Man/GetUserIdentification"
+
+        Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = emp_no, .permission = ""})
+
+        Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(url), HttpWebRequest)
+        httpRequest.Method = "Post"
+        httpRequest.ContentType = "application/json; charset=utf-8"
+
+        Dim CheckAuthenAPI As String = CheckAuthorizationApi()
+        httpRequest.Headers.Add("Authorization", "Basic " + CheckAuthenAPI)
+
+
+        Dim jsonResult As String = ""
+        '    Dim is_Pass = ""
+        Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
+            streamWriter.Write(json)
+        End Using
+        Try
+            Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+            Using streamReader As New StreamReader(httpResponse.GetResponseStream())
+                jsonResult = streamReader.ReadToEnd()
+                Dim data = JObject.Parse(jsonResult)
+                Return CType(data("information")(0)("picture_data"), Byte())
+            End Using
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
+        'Try
+        '    {
+
+        '    }
+        '    Catch
+        '    {
+        '        Return Json(is_Pass, JsonRequestBehavior.AllowGet);
+        '    } 
+        '    Return Json(is_Pass, JsonRequestBehavior.AllowGet);
+    End Function
+
+
+    Public Function CheckAuthorizationApi() As String
+        Dim username As String = "000000"
+        Dim password As String = "P@$$w0rd"
+        Dim svcCredentials As String = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(username + ":" + password))
+
+        Return svcCredentials
+
+    End Function
+
+
+
+
+
+
+    '    // Other way to whithout help of BlogSites class
+    '    //object blogObject = js.Deserialize<object>(jsonResult);
+    '    //var blogObject2 = js.Deserialize<ESCard>(jsonResult);
+
+
+
+
+    '    Return js.Deserialize < ESCard > (jsonResult); ;
+    '}
     Private Function ClearJigtool()
         Try
             Dim JigtoolAdapters As New DBxDataSet1TableAdapters.PLMecoJigToolTableAdapter
@@ -1164,12 +1331,16 @@ Public Class Form1
             Label1.Text = ""
             lbPKGRUN.Text = "Machine Running : " & PKG_Running
             lbOPNo.Text = OPNo
-
+            If c_OldOPNo = OPNo Then
+                Return
+            End If
             'PictureOPNo
             Dim oldImage As Image = pbOpno.BackgroundImage
             Dim tClient As WebClient = New WebClient
-            Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
-            pbOpno.BackgroundImage = tImage
+            ' Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            Dim tImage2 As Bitmap = Bitmap.FromStream(New MemoryStream(CallApi_GetUserAuthrization(OPNo)))  'Bitmap.FromStream(New MemoryStream(APISendGET(OPNo)))
+
+            pbOpno.BackgroundImage = tImage2
             If oldImage Is Nothing Then
                 oldImage.Dispose()
             End If

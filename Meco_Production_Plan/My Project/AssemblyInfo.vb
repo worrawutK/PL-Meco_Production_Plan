@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Meco_Production_Plan")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("Get picture from api [apcs pro]")>
 <Assembly: AssemblyCompany("Microsoft")>
 <Assembly: AssemblyProduct("Meco_Production_Plan")>
 <Assembly: AssemblyCopyright("Copyright © Microsoft 2016")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.4")>
-<Assembly: AssemblyFileVersion("1.0.1.4")>
+<Assembly: AssemblyVersion("1.0.2.0")>
+<Assembly: AssemblyFileVersion("1.0.2.0")>
