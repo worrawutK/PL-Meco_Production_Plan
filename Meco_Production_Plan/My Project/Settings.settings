@@ -6,7 +6,7 @@
       <Value Profile="(Default)">00:00:00</Value>
     </Setting>
     <Setting Name="Debug" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="lastPKG" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

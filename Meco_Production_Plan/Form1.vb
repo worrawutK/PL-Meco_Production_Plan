@@ -1099,34 +1099,39 @@ Public Class Form1
         'Return js.Deserialize(Of String)(jsonResult)
     End Function
     Public Function CallApi_GetUserAuthrization(emp_no As String) As Byte()
-
-        Dim url As String = "http://rohmapi/api/Man/GetUserIdentification"
-
-        Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = emp_no, .permission = ""})
-
-        Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(url), HttpWebRequest)
-        httpRequest.Method = "Post"
-        httpRequest.ContentType = "application/json; charset=utf-8"
-
-        Dim CheckAuthenAPI As String = CheckAuthorizationApi()
-        httpRequest.Headers.Add("Authorization", "Basic " + CheckAuthenAPI)
-
-
-        Dim jsonResult As String = ""
-        '    Dim is_Pass = ""
-        Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
-            streamWriter.Write(json)
-        End Using
         Try
+            Dim url As String = "http://rohmapi/api/Man/GetUserIdentification"
+
+            Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = emp_no, .permission = ""})
+
+            Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(url), HttpWebRequest)
+            httpRequest.Method = "Post"
+            httpRequest.ContentType = "application/json; charset=utf-8"
+
+            Dim CheckAuthenAPI As String = CheckAuthorizationApi()
+            httpRequest.Headers.Add("Authorization", "Basic " + CheckAuthenAPI)
+
+
+            Dim jsonResult As String = ""
+            '    Dim is_Pass = ""
+            Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
+                streamWriter.Write(json)
+            End Using
+            'Try
             Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
             Using streamReader As New StreamReader(httpResponse.GetResponseStream())
                 jsonResult = streamReader.ReadToEnd()
                 Dim data = JObject.Parse(jsonResult)
                 Return CType(data("information")(0)("picture_data"), Byte())
             End Using
+            'Catch ex As Exception
+            '    Return Nothing
+            'End Try
         Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
             Return Nothing
         End Try
+
 
         'Try
         '    {
@@ -1331,15 +1336,20 @@ Public Class Form1
             Label1.Text = ""
             lbPKGRUN.Text = "Machine Running : " & PKG_Running
             lbOPNo.Text = OPNo
-            If c_OldOPNo = OPNo Then
-                Return
-            End If
+            'If c_OldOPNo = OPNo Then
+            '    Return
+            'End If
             'PictureOPNo
             Dim oldImage As Image = pbOpno.BackgroundImage
             Dim tClient As WebClient = New WebClient
             ' Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
             Dim tImage2 As Bitmap = Bitmap.FromStream(New MemoryStream(CallApi_GetUserAuthrization(OPNo)))  'Bitmap.FromStream(New MemoryStream(APISendGET(OPNo)))
 
+            'If tImage2 Is Nothing Then
+            '    MessageBox.Show("tImage2 nothing")
+            'Else
+            '    MessageBox.Show("tImage2")
+            'End If
             pbOpno.BackgroundImage = tImage2
             If oldImage Is Nothing Then
                 oldImage.Dispose()
