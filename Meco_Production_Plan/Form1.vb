@@ -34,18 +34,31 @@ Public Class Form1
         CbPercentBooking.Text = My.Settings.Percent
         Dim date1 As DateTime = Date.Now
 
+        'If My.Settings.MCNo = "PL-M-01" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo01.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-02" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo02.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-03" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-04" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo04.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-05" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo05.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-06" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo06.xml"
+        'End If
         If My.Settings.MCNo = "PL-M-01" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo01.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo01.xml"
         ElseIf My.Settings.MCNo = "PL-M-02" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo02.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo02.xml"
         ElseIf My.Settings.MCNo = "PL-M-03" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo03.xml"
         ElseIf My.Settings.MCNo = "PL-M-04" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo04.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo04.xml"
         ElseIf My.Settings.MCNo = "PL-M-05" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo05.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo05.xml"
         ElseIf My.Settings.MCNo = "PL-M-06" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo06.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo06.xml"
         End If
 
         date1 = Date.Now

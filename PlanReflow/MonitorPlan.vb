@@ -31,13 +31,13 @@ Public Class MonitorPlan
 
     Private Sub LoadData()
         Try
-            'For i = 1 To 4
-            '    Dim mcc As New Machine
-            '    mcc.MachineName = "MecoNo0" & i
-            '    mcc.PahtData = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo0" & i & ".xml"
-            '    mcc.Header = "Meco#" & i & " Machine"
-            '    MachineList.Add(mcc)
-            'Next
+            For i = 1 To 5
+                Dim mcc As New Machine
+                mcc.MachineName = "MecoNo0" & i
+                mcc.PahtData = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo0" & i & ".xml"
+                mcc.Header = "Meco#" & i & " Machine"
+                MachineList.Add(mcc)
+            Next
             ' XmlSave(MachineList, PathXmlMachineList)
             XmlLoad(MachineList, PathXmlMachineList)
             XmlLoad(ListPKGNotReflow, PathXmlListPKGNotReflow)
