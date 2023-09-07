@@ -21,7 +21,7 @@
       <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="MCNo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PL-M-01</Value>
+      <Value Profile="(Default)">PL-M-03</Value>
     </Setting>
     <Setting Name="DBxConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

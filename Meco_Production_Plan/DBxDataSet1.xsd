@@ -814,14 +814,14 @@ WHERE        (PL.GroupPKG = @GroupPKG_ID) AND (PL.PlanDay = @PlanDay) AND (PL.MC
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DBxDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DBxDataSet1" msprop:Generator_UserDSName="DBxDataSet1">
+  <xs:element name="DBxDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DBxDataSet1" msprop:Generator_DataSetName="DBxDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ResultMeco" msprop:Generator_TableClassName="ResultMecoDataTable" msprop:Generator_TableVarName="tableResultMeco" msprop:Generator_RowChangedName="ResultMecoRowChanged" msprop:Generator_TablePropName="ResultMeco" msprop:Generator_RowDeletingName="ResultMecoRowDeleting" msprop:Generator_RowChangingName="ResultMecoRowChanging" msprop:Generator_RowEvHandlerName="ResultMecoRowChangeEventHandler" msprop:Generator_RowDeletedName="ResultMecoRowDeleted" msprop:Generator_RowClassName="ResultMecoRow" msprop:Generator_UserTableName="ResultMeco" msprop:Generator_RowEvArgName="ResultMecoRowChangeEvent">
+        <xs:element name="ResultMeco" msprop:Generator_RowEvHandlerName="ResultMecoRowChangeEventHandler" msprop:Generator_RowDeletedName="ResultMecoRowDeleted" msprop:Generator_RowDeletingName="ResultMecoRowDeleting" msprop:Generator_RowEvArgName="ResultMecoRowChangeEvent" msprop:Generator_TablePropName="ResultMeco" msprop:Generator_RowChangedName="ResultMecoRowChanged" msprop:Generator_RowChangingName="ResultMecoRowChanging" msprop:Generator_TableClassName="ResultMecoDataTable" msprop:Generator_RowClassName="ResultMecoRow" msprop:Generator_TableVarName="tableResultMeco" msprop:Generator_UserTableName="ResultMeco">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:int" minOccurs="0" />
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package" minOccurs="0">
+              <xs:element name="Result" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_UserColumnName="Result" type="xs:int" minOccurs="0" />
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -831,245 +831,245 @@ WHERE        (PL.GroupPKG = @GroupPKG_ID) AND (PL.PlanDay = @PlanDay) AND (PL.MC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TestWipSum" msprop:Generator_TableClassName="TestWipSumDataTable" msprop:Generator_TableVarName="tableTestWipSum" msprop:Generator_RowChangedName="TestWipSumRowChanged" msprop:Generator_TablePropName="TestWipSum" msprop:Generator_RowDeletingName="TestWipSumRowDeleting" msprop:Generator_RowChangingName="TestWipSumRowChanging" msprop:Generator_RowEvHandlerName="TestWipSumRowChangeEventHandler" msprop:Generator_RowDeletedName="TestWipSumRowDeleted" msprop:Generator_RowClassName="TestWipSumRow" msprop:Generator_UserTableName="TestWipSum" msprop:Generator_RowEvArgName="TestWipSumRowChangeEvent">
+        <xs:element name="TestWipSum" msprop:Generator_RowEvHandlerName="TestWipSumRowChangeEventHandler" msprop:Generator_RowDeletedName="TestWipSumRowDeleted" msprop:Generator_RowDeletingName="TestWipSumRowDeleting" msprop:Generator_RowEvArgName="TestWipSumRowChangeEvent" msprop:Generator_TablePropName="TestWipSum" msprop:Generator_RowChangedName="TestWipSumRowChanged" msprop:Generator_RowChangingName="TestWipSumRowChanging" msprop:Generator_TableClassName="TestWipSumDataTable" msprop:Generator_RowClassName="TestWipSumRow" msprop:Generator_TableVarName="tableTestWipSum" msprop:Generator_UserTableName="TestWipSum">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
-              <xs:element name="RESULT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_UserColumnName="RESULT" type="xs:int" minOccurs="0" />
-              <xs:element name="GroupPKG" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
+              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
+              <xs:element name="RESULT" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_UserColumnName="RESULT" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DAYPLAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDAYPLAN" msprop:Generator_ColumnPropNameInRow="DAYPLAN" msprop:Generator_ColumnPropNameInTable="DAYPLANColumn" msprop:Generator_UserColumnName="DAYPLAN" type="xs:int" minOccurs="0" />
+              <xs:element name="DAYPLAN" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="DAYPLAN" msprop:Generator_ColumnPropNameInTable="DAYPLANColumn" msprop:Generator_ColumnVarNameInTable="columnDAYPLAN" msprop:Generator_UserColumnName="DAYPLAN" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLMecoPlanData" msprop:Generator_TableClassName="PLMecoPlanDataDataTable" msprop:Generator_TableVarName="tablePLMecoPlanData" msprop:Generator_RowChangedName="PLMecoPlanDataRowChanged" msprop:Generator_TablePropName="PLMecoPlanData" msprop:Generator_RowDeletingName="PLMecoPlanDataRowDeleting" msprop:Generator_RowChangingName="PLMecoPlanDataRowChanging" msprop:Generator_RowEvHandlerName="PLMecoPlanDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanDataRowDeleted" msprop:Generator_RowClassName="PLMecoPlanDataRow" msprop:Generator_UserTableName="PLMecoPlanData" msprop:Generator_RowEvArgName="PLMecoPlanDataRowChangeEvent">
+        <xs:element name="PLMecoPlanData" msprop:Generator_RowEvHandlerName="PLMecoPlanDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanDataRowDeleted" msprop:Generator_RowDeletingName="PLMecoPlanDataRowDeleting" msprop:Generator_RowEvArgName="PLMecoPlanDataRowChangeEvent" msprop:Generator_TablePropName="PLMecoPlanData" msprop:Generator_RowChangedName="PLMecoPlanDataRowChanged" msprop:Generator_RowChangingName="PLMecoPlanDataRowChanging" msprop:Generator_TableClassName="PLMecoPlanDataDataTable" msprop:Generator_RowClassName="PLMecoPlanDataRow" msprop:Generator_TableVarName="tablePLMecoPlanData" msprop:Generator_UserTableName="PLMecoPlanData">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DayPlan" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
-              <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:short" minOccurs="0" />
-              <xs:element name="WIP" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_UserColumnName="WIP" type="xs:short" minOccurs="0" />
-              <xs:element name="MCNo" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_UserColumnName="MCNo">
+              <xs:element name="DayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
+              <xs:element name="Result" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_UserColumnName="Result" type="xs:short" minOccurs="0" />
+              <xs:element name="WIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_UserColumnName="WIP" type="xs:short" minOccurs="0" />
+              <xs:element name="MCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_UserColumnName="MCNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PlanDay" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" />
-              <xs:element name="GroupPKG" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
+              <xs:element name="PlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" />
+              <xs:element name="GroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UseTop" msprop:Generator_ColumnVarNameInTable="columnUseTop" msprop:Generator_ColumnPropNameInRow="UseTop" msprop:Generator_ColumnPropNameInTable="UseTopColumn" msprop:Generator_UserColumnName="UseTop" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UseTop" msprop:Generator_ColumnPropNameInRow="UseTop" msprop:Generator_ColumnPropNameInTable="UseTopColumn" msprop:Generator_ColumnVarNameInTable="columnUseTop" msprop:Generator_UserColumnName="UseTop" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WIPMeco" msprop:Generator_TableClassName="WIPMecoDataTable" msprop:Generator_TableVarName="tableWIPMeco" msprop:Generator_RowChangedName="WIPMecoRowChanged" msprop:Generator_TablePropName="WIPMeco" msprop:Generator_RowDeletingName="WIPMecoRowDeleting" msprop:Generator_RowChangingName="WIPMecoRowChanging" msprop:Generator_RowEvHandlerName="WIPMecoRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPMecoRowDeleted" msprop:Generator_RowClassName="WIPMecoRow" msprop:Generator_UserTableName="WIPMeco" msprop:Generator_RowEvArgName="WIPMecoRowChangeEvent">
+        <xs:element name="WIPMeco" msprop:Generator_RowEvHandlerName="WIPMecoRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPMecoRowDeleted" msprop:Generator_RowDeletingName="WIPMecoRowDeleting" msprop:Generator_RowEvArgName="WIPMecoRowChangeEvent" msprop:Generator_TablePropName="WIPMeco" msprop:Generator_RowChangedName="WIPMecoRowChanged" msprop:Generator_RowChangingName="WIPMecoRowChanging" msprop:Generator_TableClassName="WIPMecoDataTable" msprop:Generator_RowClassName="WIPMecoRow" msprop:Generator_TableVarName="tableWIPMeco" msprop:Generator_UserTableName="WIPMeco">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package" minOccurs="0">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
+              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLMecoPlanGroup" msprop:Generator_TableClassName="PLMecoPlanGroupDataTable" msprop:Generator_TableVarName="tablePLMecoPlanGroup" msprop:Generator_RowChangedName="PLMecoPlanGroupRowChanged" msprop:Generator_TablePropName="PLMecoPlanGroup" msprop:Generator_RowDeletingName="PLMecoPlanGroupRowDeleting" msprop:Generator_RowChangingName="PLMecoPlanGroupRowChanging" msprop:Generator_RowEvHandlerName="PLMecoPlanGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanGroupRowDeleted" msprop:Generator_RowClassName="PLMecoPlanGroupRow" msprop:Generator_UserTableName="PLMecoPlanGroup" msprop:Generator_RowEvArgName="PLMecoPlanGroupRowChangeEvent">
+        <xs:element name="PLMecoPlanGroup" msprop:Generator_RowEvHandlerName="PLMecoPlanGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanGroupRowDeleted" msprop:Generator_RowDeletingName="PLMecoPlanGroupRowDeleting" msprop:Generator_RowEvArgName="PLMecoPlanGroupRowChangeEvent" msprop:Generator_TablePropName="PLMecoPlanGroup" msprop:Generator_RowChangedName="PLMecoPlanGroupRowChanged" msprop:Generator_RowChangingName="PLMecoPlanGroupRowChanging" msprop:Generator_TableClassName="PLMecoPlanGroupDataTable" msprop:Generator_RowClassName="PLMecoPlanGroupRow" msprop:Generator_TableVarName="tablePLMecoPlanGroup" msprop:Generator_UserTableName="PLMecoPlanGroup">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
-              <xs:element name="RESULT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_UserColumnName="RESULT" type="xs:int" minOccurs="0" />
-              <xs:element name="GroupPKG" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
+              <xs:element name="WIP" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_UserColumnName="WIP" type="xs:int" minOccurs="0" />
+              <xs:element name="RESULT" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_UserColumnName="RESULT" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PLMecoCapaData" msprop:Generator_RowEvHandlerName="PLMecoCapaDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoCapaDataRowDeleted" msprop:Generator_RowDeletingName="PLMecoCapaDataRowDeleting" msprop:Generator_RowEvArgName="PLMecoCapaDataRowChangeEvent" msprop:Generator_TablePropName="PLMecoCapaData" msprop:Generator_RowChangedName="PLMecoCapaDataRowChanged" msprop:Generator_RowChangingName="PLMecoCapaDataRowChanging" msprop:Generator_TableClassName="PLMecoCapaDataDataTable" msprop:Generator_RowClassName="PLMecoCapaDataRow" msprop:Generator_TableVarName="tablePLMecoCapaData" msprop:Generator_UserTableName="PLMecoCapaData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="F_LotRate" msprop:Generator_ColumnPropNameInRow="F_LotRate" msprop:Generator_ColumnPropNameInTable="F_LotRateColumn" msprop:Generator_ColumnVarNameInTable="columnF_LotRate" msprop:Generator_UserColumnName="F_LotRate" type="xs:short" minOccurs="0" />
+              <xs:element name="TypeChange" msprop:Generator_ColumnPropNameInRow="TypeChange" msprop:Generator_ColumnPropNameInTable="TypeChangeColumn" msprop:Generator_ColumnVarNameInTable="columnTypeChange" msprop:Generator_UserColumnName="TypeChange" type="xs:short" minOccurs="0" />
+              <xs:element name="Capa" msprop:Generator_ColumnPropNameInRow="Capa" msprop:Generator_ColumnPropNameInTable="CapaColumn" msprop:Generator_ColumnVarNameInTable="columnCapa" msprop:Generator_UserColumnName="Capa" type="xs:short" minOccurs="0" />
+              <xs:element name="BeforeWIP" msprop:Generator_ColumnPropNameInRow="BeforeWIP" msprop:Generator_ColumnPropNameInTable="BeforeWIPColumn" msprop:Generator_ColumnVarNameInTable="columnBeforeWIP" msprop:Generator_UserColumnName="BeforeWIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PLMecoPlanData1" msprop:Generator_RowClassName="PLMecoPlanData1Row" msprop:Generator_RowEvHandlerName="PLMecoPlanData1RowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanData1RowDeleted" msprop:Generator_RowDeletingName="PLMecoPlanData1RowDeleting" msprop:Generator_RowEvArgName="PLMecoPlanData1RowChangeEvent" msprop:Generator_TablePropName="PLMecoPlanData1" msprop:Generator_RowChangedName="PLMecoPlanData1RowChanged" msprop:Generator_RowChangingName="PLMecoPlanData1RowChanging" msprop:Generator_TableClassName="PLMecoPlanData1DataTable" msprop:Generator_UserTableName="PLMecoPlanData1" msprop:Generator_TableVarName="tablePLMecoPlanData1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DayPlan" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PLMecoCapaData" msprop:Generator_TableClassName="PLMecoCapaDataDataTable" msprop:Generator_TableVarName="tablePLMecoCapaData" msprop:Generator_RowChangedName="PLMecoCapaDataRowChanged" msprop:Generator_TablePropName="PLMecoCapaData" msprop:Generator_RowDeletingName="PLMecoCapaDataRowDeleting" msprop:Generator_RowChangingName="PLMecoCapaDataRowChanging" msprop:Generator_RowEvHandlerName="PLMecoCapaDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoCapaDataRowDeleted" msprop:Generator_RowClassName="PLMecoCapaDataRow" msprop:Generator_UserTableName="PLMecoCapaData" msprop:Generator_RowEvArgName="PLMecoCapaDataRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
+              <xs:element name="DayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
+              <xs:element name="Result" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_UserColumnName="Result" type="xs:short" minOccurs="0" />
+              <xs:element name="WIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_UserColumnName="WIP" type="xs:short" minOccurs="0" />
+              <xs:element name="MCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_UserColumnName="MCNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="F_LotRate" msprop:Generator_ColumnVarNameInTable="columnF_LotRate" msprop:Generator_ColumnPropNameInRow="F_LotRate" msprop:Generator_ColumnPropNameInTable="F_LotRateColumn" msprop:Generator_UserColumnName="F_LotRate" type="xs:short" minOccurs="0" />
-              <xs:element name="TypeChange" msprop:Generator_ColumnVarNameInTable="columnTypeChange" msprop:Generator_ColumnPropNameInRow="TypeChange" msprop:Generator_ColumnPropNameInTable="TypeChangeColumn" msprop:Generator_UserColumnName="TypeChange" type="xs:short" minOccurs="0" />
-              <xs:element name="Capa" msprop:Generator_ColumnVarNameInTable="columnCapa" msprop:Generator_ColumnPropNameInRow="Capa" msprop:Generator_ColumnPropNameInTable="CapaColumn" msprop:Generator_UserColumnName="Capa" type="xs:short" minOccurs="0" />
-              <xs:element name="BeforeWIP" msprop:Generator_ColumnVarNameInTable="columnBeforeWIP" msprop:Generator_ColumnPropNameInRow="BeforeWIP" msprop:Generator_ColumnPropNameInTable="BeforeWIPColumn" msprop:Generator_UserColumnName="BeforeWIP" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PLMecoPlanData1" msprop:Generator_TableClassName="PLMecoPlanData1DataTable" msprop:Generator_TableVarName="tablePLMecoPlanData1" msprop:Generator_TablePropName="PLMecoPlanData1" msprop:Generator_RowDeletingName="PLMecoPlanData1RowDeleting" msprop:Generator_RowChangingName="PLMecoPlanData1RowChanging" msprop:Generator_RowEvHandlerName="PLMecoPlanData1RowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoPlanData1RowDeleted" msprop:Generator_UserTableName="PLMecoPlanData1" msprop:Generator_RowChangedName="PLMecoPlanData1RowChanged" msprop:Generator_RowEvArgName="PLMecoPlanData1RowChangeEvent" msprop:Generator_RowClassName="PLMecoPlanData1Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DayPlan" msprop:Generator_ColumnVarNameInTable="columnDayPlan" msprop:Generator_ColumnPropNameInRow="DayPlan" msprop:Generator_ColumnPropNameInTable="DayPlanColumn" msprop:Generator_UserColumnName="DayPlan" type="xs:short" minOccurs="0" />
-              <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:short" minOccurs="0" />
-              <xs:element name="WIP" msprop:Generator_ColumnVarNameInTable="columnWIP" msprop:Generator_ColumnPropNameInRow="WIP" msprop:Generator_ColumnPropNameInTable="WIPColumn" msprop:Generator_UserColumnName="WIP" type="xs:short" minOccurs="0" />
-              <xs:element name="MCNo" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_UserColumnName="MCNo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="PlanDay" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" />
-              <xs:element name="GroupPKG" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
+              <xs:element name="PlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" />
+              <xs:element name="GroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UseTop" msprop:Generator_ColumnVarNameInTable="columnUseTop" msprop:Generator_ColumnPropNameInRow="UseTop" msprop:Generator_ColumnPropNameInTable="UseTopColumn" msprop:Generator_UserColumnName="UseTop" type="xs:boolean" minOccurs="0" />
-              <xs:element name="PKGStartPlan" msprop:Generator_ColumnVarNameInTable="columnPKGStartPlan" msprop:Generator_ColumnPropNameInRow="PKGStartPlan" msprop:Generator_ColumnPropNameInTable="PKGStartPlanColumn" msprop:Generator_UserColumnName="PKGStartPlan" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="PKGEndPlan" msprop:Generator_ColumnVarNameInTable="columnPKGEndPlan" msprop:Generator_ColumnPropNameInRow="PKGEndPlan" msprop:Generator_ColumnPropNameInTable="PKGEndPlanColumn" msprop:Generator_UserColumnName="PKGEndPlan" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="PlanBy" msprop:Generator_ColumnVarNameInTable="columnPlanBy" msprop:Generator_ColumnPropNameInRow="PlanBy" msprop:Generator_ColumnPropNameInTable="PlanByColumn" msprop:Generator_UserColumnName="PlanBy" minOccurs="0">
+              <xs:element name="UseTop" msprop:Generator_ColumnPropNameInRow="UseTop" msprop:Generator_ColumnPropNameInTable="UseTopColumn" msprop:Generator_ColumnVarNameInTable="columnUseTop" msprop:Generator_UserColumnName="UseTop" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PKGStartPlan" msprop:Generator_ColumnPropNameInRow="PKGStartPlan" msprop:Generator_ColumnPropNameInTable="PKGStartPlanColumn" msprop:Generator_ColumnVarNameInTable="columnPKGStartPlan" msprop:Generator_UserColumnName="PKGStartPlan" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PKGEndPlan" msprop:Generator_ColumnPropNameInRow="PKGEndPlan" msprop:Generator_ColumnPropNameInTable="PKGEndPlanColumn" msprop:Generator_ColumnVarNameInTable="columnPKGEndPlan" msprop:Generator_UserColumnName="PKGEndPlan" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PlanBy" msprop:Generator_ColumnPropNameInRow="PlanBy" msprop:Generator_ColumnPropNameInTable="PlanByColumn" msprop:Generator_ColumnVarNameInTable="columnPlanBy" msprop:Generator_UserColumnName="PlanBy" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UpdateDate" msprop:Generator_ColumnVarNameInTable="columnUpdateDate" msprop:Generator_ColumnPropNameInRow="UpdateDate" msprop:Generator_ColumnPropNameInTable="UpdateDateColumn" msprop:Generator_UserColumnName="UpdateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UpdateDate" msprop:Generator_ColumnPropNameInRow="UpdateDate" msprop:Generator_ColumnPropNameInTable="UpdateDateColumn" msprop:Generator_ColumnVarNameInTable="columnUpdateDate" msprop:Generator_UserColumnName="UpdateDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLData" msprop:Generator_TableClassName="PLDataDataTable" msprop:Generator_TableVarName="tablePLData" msprop:Generator_RowChangedName="PLDataRowChanged" msprop:Generator_TablePropName="PLData" msprop:Generator_RowDeletingName="PLDataRowDeleting" msprop:Generator_RowChangingName="PLDataRowChanging" msprop:Generator_RowEvHandlerName="PLDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLDataRowDeleted" msprop:Generator_RowClassName="PLDataRow" msprop:Generator_UserTableName="PLData" msprop:Generator_RowEvArgName="PLDataRowChangeEvent">
+        <xs:element name="PLData" msprop:Generator_RowEvHandlerName="PLDataRowChangeEventHandler" msprop:Generator_RowDeletedName="PLDataRowDeleted" msprop:Generator_RowDeletingName="PLDataRowDeleting" msprop:Generator_RowEvArgName="PLDataRowChangeEvent" msprop:Generator_TablePropName="PLData" msprop:Generator_RowChangedName="PLDataRowChanged" msprop:Generator_RowChangingName="PLDataRowChanging" msprop:Generator_TableClassName="PLDataDataTable" msprop:Generator_RowClassName="PLDataRow" msprop:Generator_TableVarName="tablePLData" msprop:Generator_UserTableName="PLData">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MCNo" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_UserColumnName="MCNo">
+              <xs:element name="MCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_UserColumnName="MCNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LotNo" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_UserColumnName="LotNo">
+              <xs:element name="LotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_UserColumnName="LotNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LotStartTime" msprop:Generator_ColumnVarNameInTable="columnLotStartTime" msprop:Generator_ColumnPropNameInRow="LotStartTime" msprop:Generator_ColumnPropNameInTable="LotStartTimeColumn" msprop:Generator_UserColumnName="LotStartTime" type="xs:dateTime" />
-              <xs:element name="LotEndTime" msprop:Generator_ColumnVarNameInTable="columnLotEndTime" msprop:Generator_ColumnPropNameInRow="LotEndTime" msprop:Generator_ColumnPropNameInTable="LotEndTimeColumn" msprop:Generator_UserColumnName="LotEndTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" minOccurs="0">
+              <xs:element name="LotStartTime" msprop:Generator_ColumnPropNameInRow="LotStartTime" msprop:Generator_ColumnPropNameInTable="LotStartTimeColumn" msprop:Generator_ColumnVarNameInTable="columnLotStartTime" msprop:Generator_UserColumnName="LotStartTime" type="xs:dateTime" />
+              <xs:element name="LotEndTime" msprop:Generator_ColumnPropNameInRow="LotEndTime" msprop:Generator_ColumnPropNameInTable="LotEndTimeColumn" msprop:Generator_ColumnVarNameInTable="columnLotEndTime" msprop:Generator_UserColumnName="LotEndTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Material" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_UserColumnName="Material" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ABNormal" msprop:Generator_ColumnVarNameInTable="columnABNormal" msprop:Generator_ColumnPropNameInRow="ABNormal" msprop:Generator_ColumnPropNameInTable="ABNormalColumn" msprop:Generator_UserColumnName="ABNormal" minOccurs="0">
+              <xs:element name="ABNormal" msprop:Generator_ColumnPropNameInRow="ABNormal" msprop:Generator_ColumnPropNameInTable="ABNormalColumn" msprop:Generator_ColumnVarNameInTable="columnABNormal" msprop:Generator_UserColumnName="ABNormal" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LoadCount" msprop:Generator_ColumnVarNameInTable="columnLoadCount" msprop:Generator_ColumnPropNameInRow="LoadCount" msprop:Generator_ColumnPropNameInTable="LoadCountColumn" msprop:Generator_UserColumnName="LoadCount" type="xs:int" minOccurs="0" />
-              <xs:element name="UnloadCount" msprop:Generator_ColumnVarNameInTable="columnUnloadCount" msprop:Generator_ColumnPropNameInRow="UnloadCount" msprop:Generator_ColumnPropNameInTable="UnloadCountColumn" msprop:Generator_UserColumnName="UnloadCount" type="xs:int" minOccurs="0" />
-              <xs:element name="OPNo" msprop:Generator_ColumnVarNameInTable="columnOPNo" msprop:Generator_ColumnPropNameInRow="OPNo" msprop:Generator_ColumnPropNameInTable="OPNoColumn" msprop:Generator_UserColumnName="OPNo" minOccurs="0">
+              <xs:element name="LoadCount" msprop:Generator_ColumnPropNameInRow="LoadCount" msprop:Generator_ColumnPropNameInTable="LoadCountColumn" msprop:Generator_ColumnVarNameInTable="columnLoadCount" msprop:Generator_UserColumnName="LoadCount" type="xs:int" minOccurs="0" />
+              <xs:element name="UnloadCount" msprop:Generator_ColumnPropNameInRow="UnloadCount" msprop:Generator_ColumnPropNameInTable="UnloadCountColumn" msprop:Generator_ColumnVarNameInTable="columnUnloadCount" msprop:Generator_UserColumnName="UnloadCount" type="xs:int" minOccurs="0" />
+              <xs:element name="OPNo" msprop:Generator_ColumnPropNameInRow="OPNo" msprop:Generator_ColumnPropNameInTable="OPNoColumn" msprop:Generator_ColumnVarNameInTable="columnOPNo" msprop:Generator_UserColumnName="OPNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MagazineNo" msprop:Generator_ColumnVarNameInTable="columnMagazineNo" msprop:Generator_ColumnPropNameInRow="MagazineNo" msprop:Generator_ColumnPropNameInTable="MagazineNoColumn" msprop:Generator_UserColumnName="MagazineNo" minOccurs="0">
+              <xs:element name="MagazineNo" msprop:Generator_ColumnPropNameInRow="MagazineNo" msprop:Generator_ColumnPropNameInTable="MagazineNoColumn" msprop:Generator_ColumnVarNameInTable="columnMagazineNo" msprop:Generator_UserColumnName="MagazineNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="11" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SelfConVersion" msprop:Generator_ColumnVarNameInTable="columnSelfConVersion" msprop:Generator_ColumnPropNameInRow="SelfConVersion" msprop:Generator_ColumnPropNameInTable="SelfConVersionColumn" msprop:Generator_UserColumnName="SelfConVersion" minOccurs="0">
+              <xs:element name="SelfConVersion" msprop:Generator_ColumnPropNameInRow="SelfConVersion" msprop:Generator_ColumnPropNameInTable="SelfConVersionColumn" msprop:Generator_ColumnVarNameInTable="columnSelfConVersion" msprop:Generator_UserColumnName="SelfConVersion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NetVersion" msprop:Generator_ColumnVarNameInTable="columnNetVersion" msprop:Generator_ColumnPropNameInRow="NetVersion" msprop:Generator_ColumnPropNameInTable="NetVersionColumn" msprop:Generator_UserColumnName="NetVersion" minOccurs="0">
+              <xs:element name="NetVersion" msprop:Generator_ColumnPropNameInRow="NetVersion" msprop:Generator_ColumnPropNameInTable="NetVersionColumn" msprop:Generator_ColumnVarNameInTable="columnNetVersion" msprop:Generator_UserColumnName="NetVersion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="InputQtyAdjust" msprop:Generator_ColumnVarNameInTable="columnInputQtyAdjust" msprop:Generator_ColumnPropNameInRow="InputQtyAdjust" msprop:Generator_ColumnPropNameInTable="InputQtyAdjustColumn" msprop:Generator_UserColumnName="InputQtyAdjust" type="xs:int" minOccurs="0" />
-              <xs:element name="TotalGoodAdjust" msprop:Generator_ColumnVarNameInTable="columnTotalGoodAdjust" msprop:Generator_ColumnPropNameInRow="TotalGoodAdjust" msprop:Generator_ColumnPropNameInTable="TotalGoodAdjustColumn" msprop:Generator_UserColumnName="TotalGoodAdjust" type="xs:int" minOccurs="0" />
-              <xs:element name="TotalNGAdjust" msprop:Generator_ColumnVarNameInTable="columnTotalNGAdjust" msprop:Generator_ColumnPropNameInRow="TotalNGAdjust" msprop:Generator_ColumnPropNameInTable="TotalNGAdjustColumn" msprop:Generator_UserColumnName="TotalNGAdjust" type="xs:int" minOccurs="0" />
-              <xs:element name="DummyQty" msprop:Generator_ColumnVarNameInTable="columnDummyQty" msprop:Generator_ColumnPropNameInRow="DummyQty" msprop:Generator_ColumnPropNameInTable="DummyQtyColumn" msprop:Generator_UserColumnName="DummyQty" type="xs:int" minOccurs="0" />
-              <xs:element name="OPJudgement" msprop:Generator_ColumnVarNameInTable="columnOPJudgement" msprop:Generator_ColumnPropNameInRow="OPJudgement" msprop:Generator_ColumnPropNameInTable="OPJudgementColumn" msprop:Generator_UserColumnName="OPJudgement" minOccurs="0">
+              <xs:element name="InputQtyAdjust" msprop:Generator_ColumnPropNameInRow="InputQtyAdjust" msprop:Generator_ColumnPropNameInTable="InputQtyAdjustColumn" msprop:Generator_ColumnVarNameInTable="columnInputQtyAdjust" msprop:Generator_UserColumnName="InputQtyAdjust" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalGoodAdjust" msprop:Generator_ColumnPropNameInRow="TotalGoodAdjust" msprop:Generator_ColumnPropNameInTable="TotalGoodAdjustColumn" msprop:Generator_ColumnVarNameInTable="columnTotalGoodAdjust" msprop:Generator_UserColumnName="TotalGoodAdjust" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalNGAdjust" msprop:Generator_ColumnPropNameInRow="TotalNGAdjust" msprop:Generator_ColumnPropNameInTable="TotalNGAdjustColumn" msprop:Generator_ColumnVarNameInTable="columnTotalNGAdjust" msprop:Generator_UserColumnName="TotalNGAdjust" type="xs:int" minOccurs="0" />
+              <xs:element name="DummyQty" msprop:Generator_ColumnPropNameInRow="DummyQty" msprop:Generator_ColumnPropNameInTable="DummyQtyColumn" msprop:Generator_ColumnVarNameInTable="columnDummyQty" msprop:Generator_UserColumnName="DummyQty" type="xs:int" minOccurs="0" />
+              <xs:element name="OPJudgement" msprop:Generator_ColumnPropNameInRow="OPJudgement" msprop:Generator_ColumnPropNameInTable="OPJudgementColumn" msprop:Generator_ColumnVarNameInTable="columnOPJudgement" msprop:Generator_UserColumnName="OPJudgement" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+              <xs:element name="Remark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_UserColumnName="Remark" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package" minOccurs="0">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Device" msprop:Generator_ColumnVarNameInTable="columnDevice" msprop:Generator_ColumnPropNameInRow="Device" msprop:Generator_ColumnPropNameInTable="DeviceColumn" msprop:Generator_UserColumnName="Device" minOccurs="0">
+              <xs:element name="Device" msprop:Generator_ColumnPropNameInRow="Device" msprop:Generator_ColumnPropNameInTable="DeviceColumn" msprop:Generator_ColumnVarNameInTable="columnDevice" msprop:Generator_UserColumnName="Device" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -1079,39 +1079,39 @@ WHERE        (PL.GroupPKG = @GroupPKG_ID) AND (PL.PlanDay = @PlanDay) AND (PL.MC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLIPMWip" msprop:Generator_TableClassName="PLIPMWipDataTable" msprop:Generator_TableVarName="tablePLIPMWip" msprop:Generator_RowChangedName="PLIPMWipRowChanged" msprop:Generator_TablePropName="PLIPMWip" msprop:Generator_RowDeletingName="PLIPMWipRowDeleting" msprop:Generator_RowChangingName="PLIPMWipRowChanging" msprop:Generator_RowEvHandlerName="PLIPMWipRowChangeEventHandler" msprop:Generator_RowDeletedName="PLIPMWipRowDeleted" msprop:Generator_RowClassName="PLIPMWipRow" msprop:Generator_UserTableName="PLIPMWip" msprop:Generator_RowEvArgName="PLIPMWipRowChangeEvent">
+        <xs:element name="PLIPMWip" msprop:Generator_RowEvHandlerName="PLIPMWipRowChangeEventHandler" msprop:Generator_RowDeletedName="PLIPMWipRowDeleted" msprop:Generator_RowDeletingName="PLIPMWipRowDeleting" msprop:Generator_RowEvArgName="PLIPMWipRowChangeEvent" msprop:Generator_TablePropName="PLIPMWip" msprop:Generator_RowChangedName="PLIPMWipRowChanged" msprop:Generator_RowChangingName="PLIPMWipRowChanging" msprop:Generator_TableClassName="PLIPMWipDataTable" msprop:Generator_RowClassName="PLIPMWipRow" msprop:Generator_TableVarName="tablePLIPMWip" msprop:Generator_UserTableName="PLIPMWip">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="LotNo" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_UserColumnName="LotNo">
+              <xs:element name="LotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_UserColumnName="LotNo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="INPUTDate" msprop:Generator_ColumnVarNameInTable="columnINPUTDate" msprop:Generator_ColumnPropNameInRow="INPUTDate" msprop:Generator_ColumnPropNameInTable="INPUTDateColumn" msprop:Generator_UserColumnName="INPUTDate" type="xs:dateTime" />
-              <xs:element name="OPNo" msprop:Generator_ColumnVarNameInTable="columnOPNo" msprop:Generator_ColumnPropNameInRow="OPNo" msprop:Generator_ColumnPropNameInTable="OPNoColumn" msprop:Generator_UserColumnName="OPNo" minOccurs="0">
+              <xs:element name="INPUTDate" msprop:Generator_ColumnPropNameInRow="INPUTDate" msprop:Generator_ColumnPropNameInTable="INPUTDateColumn" msprop:Generator_ColumnVarNameInTable="columnINPUTDate" msprop:Generator_UserColumnName="INPUTDate" type="xs:dateTime" />
+              <xs:element name="OPNo" msprop:Generator_ColumnPropNameInRow="OPNo" msprop:Generator_ColumnPropNameInTable="OPNoColumn" msprop:Generator_ColumnVarNameInTable="columnOPNo" msprop:Generator_UserColumnName="OPNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MCNo" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_UserColumnName="MCNo" minOccurs="0">
+              <xs:element name="MCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_UserColumnName="MCNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+              <xs:element name="Remark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_UserColumnName="Remark" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1121,19 +1121,19 @@ WHERE        (PL.GroupPKG = @GroupPKG_ID) AND (PL.PlanDay = @PlanDay) AND (PL.MC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLMecoJigTool" msprop:Generator_TableClassName="PLMecoJigToolDataTable" msprop:Generator_TableVarName="tablePLMecoJigTool" msprop:Generator_TablePropName="PLMecoJigTool" msprop:Generator_RowDeletingName="PLMecoJigToolRowDeleting" msprop:Generator_RowChangingName="PLMecoJigToolRowChanging" msprop:Generator_RowEvHandlerName="PLMecoJigToolRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoJigToolRowDeleted" msprop:Generator_UserTableName="PLMecoJigTool" msprop:Generator_RowChangedName="PLMecoJigToolRowChanged" msprop:Generator_RowEvArgName="PLMecoJigToolRowChangeEvent" msprop:Generator_RowClassName="PLMecoJigToolRow">
+        <xs:element name="PLMecoJigTool" msprop:Generator_RowClassName="PLMecoJigToolRow" msprop:Generator_RowEvHandlerName="PLMecoJigToolRowChangeEventHandler" msprop:Generator_RowDeletedName="PLMecoJigToolRowDeleted" msprop:Generator_RowDeletingName="PLMecoJigToolRowDeleting" msprop:Generator_RowEvArgName="PLMecoJigToolRowChangeEvent" msprop:Generator_TablePropName="PLMecoJigTool" msprop:Generator_RowChangedName="PLMecoJigToolRowChanged" msprop:Generator_RowChangingName="PLMecoJigToolRowChanging" msprop:Generator_TableClassName="PLMecoJigToolDataTable" msprop:Generator_UserTableName="PLMecoJigTool" msprop:Generator_TableVarName="tablePLMecoJigTool">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="NameJIG" msprop:Generator_ColumnVarNameInTable="columnNameJIG" msprop:Generator_ColumnPropNameInRow="NameJIG" msprop:Generator_ColumnPropNameInTable="NameJIGColumn" msprop:Generator_UserColumnName="NameJIG">
+              <xs:element name="NameJIG" msprop:Generator_ColumnPropNameInRow="NameJIG" msprop:Generator_ColumnPropNameInTable="NameJIGColumn" msprop:Generator_ColumnVarNameInTable="columnNameJIG" msprop:Generator_UserColumnName="NameJIG">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_UserColumnName="Stock" type="xs:int" minOccurs="0" />
-              <xs:element name="UseJIG" msprop:Generator_ColumnVarNameInTable="columnUseJIG" msprop:Generator_ColumnPropNameInRow="UseJIG" msprop:Generator_ColumnPropNameInTable="UseJIGColumn" msprop:Generator_UserColumnName="UseJIG" type="xs:int" minOccurs="0" />
-              <xs:element name="TypeTool" msprop:Generator_ColumnVarNameInTable="columnTypeTool" msprop:Generator_ColumnPropNameInRow="TypeTool" msprop:Generator_ColumnPropNameInTable="TypeToolColumn" msprop:Generator_UserColumnName="TypeTool" minOccurs="0">
+              <xs:element name="Stock" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_ColumnVarNameInTable="columnStock" msprop:Generator_UserColumnName="Stock" type="xs:int" minOccurs="0" />
+              <xs:element name="UseJIG" msprop:Generator_ColumnPropNameInRow="UseJIG" msprop:Generator_ColumnPropNameInTable="UseJIGColumn" msprop:Generator_ColumnVarNameInTable="columnUseJIG" msprop:Generator_UserColumnName="UseJIG" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeTool" msprop:Generator_ColumnPropNameInRow="TypeTool" msprop:Generator_ColumnPropNameInTable="TypeToolColumn" msprop:Generator_ColumnVarNameInTable="columnTypeTool" msprop:Generator_UserColumnName="TypeTool" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1143,53 +1143,53 @@ WHERE        (PL.GroupPKG = @GroupPKG_ID) AND (PL.PlanDay = @PlanDay) AND (PL.MC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PLToolType" msprop:Generator_TableClassName="PLToolTypeDataTable" msprop:Generator_TableVarName="tablePLToolType" msprop:Generator_TablePropName="PLToolType" msprop:Generator_RowDeletingName="PLToolTypeRowDeleting" msprop:Generator_RowChangingName="PLToolTypeRowChanging" msprop:Generator_RowEvHandlerName="PLToolTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="PLToolTypeRowDeleted" msprop:Generator_UserTableName="PLToolType" msprop:Generator_RowChangedName="PLToolTypeRowChanged" msprop:Generator_RowEvArgName="PLToolTypeRowChangeEvent" msprop:Generator_RowClassName="PLToolTypeRow">
+        <xs:element name="PLToolType" msprop:Generator_RowClassName="PLToolTypeRow" msprop:Generator_RowEvHandlerName="PLToolTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="PLToolTypeRowDeleted" msprop:Generator_RowDeletingName="PLToolTypeRowDeleting" msprop:Generator_RowEvArgName="PLToolTypeRowChangeEvent" msprop:Generator_TablePropName="PLToolType" msprop:Generator_RowChangedName="PLToolTypeRowChanged" msprop:Generator_RowChangingName="PLToolTypeRowChanging" msprop:Generator_TableClassName="PLToolTypeDataTable" msprop:Generator_UserTableName="PLToolType" msprop:Generator_TableVarName="tablePLToolType">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName">
+              <xs:element name="GroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_UserColumnName="GroupName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NameJIG" msprop:Generator_ColumnVarNameInTable="columnNameJIG" msprop:Generator_ColumnPropNameInRow="NameJIG" msprop:Generator_ColumnPropNameInTable="NameJIGColumn" msprop:Generator_UserColumnName="NameJIG">
+              <xs:element name="NameJIG" msprop:Generator_ColumnPropNameInRow="NameJIG" msprop:Generator_ColumnPropNameInTable="NameJIGColumn" msprop:Generator_ColumnVarNameInTable="columnNameJIG" msprop:Generator_UserColumnName="NameJIG">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UsageUnit" msprop:Generator_ColumnVarNameInTable="columnUsageUnit" msprop:Generator_ColumnPropNameInRow="UsageUnit" msprop:Generator_ColumnPropNameInTable="UsageUnitColumn" msprop:Generator_UserColumnName="UsageUnit" type="xs:int" minOccurs="0" />
+              <xs:element name="UsageUnit" msprop:Generator_ColumnPropNameInRow="UsageUnit" msprop:Generator_ColumnPropNameInTable="UsageUnitColumn" msprop:Generator_ColumnVarNameInTable="columnUsageUnit" msprop:Generator_UserColumnName="UsageUnit" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PL_Group" msprop:Generator_TableClassName="PL_GroupDataTable" msprop:Generator_TableVarName="tablePL_Group" msprop:Generator_TablePropName="PL_Group" msprop:Generator_RowDeletingName="PL_GroupRowDeleting" msprop:Generator_RowChangingName="PL_GroupRowChanging" msprop:Generator_RowEvHandlerName="PL_GroupRowChangeEventHandler" msprop:Generator_RowDeletedName="PL_GroupRowDeleted" msprop:Generator_UserTableName="PL_Group" msprop:Generator_RowChangedName="PL_GroupRowChanged" msprop:Generator_RowEvArgName="PL_GroupRowChangeEvent" msprop:Generator_RowClassName="PL_GroupRow">
+        <xs:element name="PL_Group" msprop:Generator_RowClassName="PL_GroupRow" msprop:Generator_RowEvHandlerName="PL_GroupRowChangeEventHandler" msprop:Generator_RowDeletedName="PL_GroupRowDeleted" msprop:Generator_RowDeletingName="PL_GroupRowDeleting" msprop:Generator_RowEvArgName="PL_GroupRowChangeEvent" msprop:Generator_TablePropName="PL_Group" msprop:Generator_RowChangedName="PL_GroupRowChanged" msprop:Generator_RowChangingName="PL_GroupRowChanging" msprop:Generator_TableClassName="PL_GroupDataTable" msprop:Generator_UserTableName="PL_Group" msprop:Generator_TableVarName="tablePL_Group">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package">
+              <xs:element name="Package" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_UserColumnName="Package">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GroupPKG" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
+              <xs:element name="GroupPKG" msprop:Generator_ColumnPropNameInRow="GroupPKG" msprop:Generator_ColumnPropNameInTable="GroupPKGColumn" msprop:Generator_ColumnVarNameInTable="columnGroupPKG" msprop:Generator_UserColumnName="GroupPKG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName" minOccurs="0">
+              <xs:element name="GroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_UserColumnName="GroupName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PlanDay" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="MCNo" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_UserColumnName="MCNo" minOccurs="0">
+              <xs:element name="PlanDay" msprop:Generator_ColumnPropNameInRow="PlanDay" msprop:Generator_ColumnPropNameInTable="PlanDayColumn" msprop:Generator_ColumnVarNameInTable="columnPlanDay" msprop:Generator_UserColumnName="PlanDay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MCNo" msprop:Generator_ColumnPropNameInRow="MCNo" msprop:Generator_ColumnPropNameInTable="MCNoColumn" msprop:Generator_ColumnVarNameInTable="columnMCNo" msprop:Generator_UserColumnName="MCNo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />

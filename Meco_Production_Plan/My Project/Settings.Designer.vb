@@ -128,7 +128,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("PL-M-01")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("PL-M-03")>  _
         Public Property MCNo() As String
             Get
                 Return CType(Me("MCNo"),String)

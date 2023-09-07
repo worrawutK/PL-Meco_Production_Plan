@@ -38,7 +38,12 @@ Public Class MonitorPlan
                 mcc.Header = "Meco#" & i & " Machine"
                 MachineList.Add(mcc)
             Next
-            ' XmlSave(MachineList, PathXmlMachineList)
+
+            If (Not File.Exists(PathXmlMachineList)) Then
+                'Frist Install need XmlSave
+                XmlSave(MachineList, PathXmlMachineList)
+                XmlSave(ListPKGNotReflow, PathXmlListPKGNotReflow)
+            End If
             XmlLoad(MachineList, PathXmlMachineList)
             XmlLoad(ListPKGNotReflow, PathXmlListPKGNotReflow)
             If MachineList.Count = 0 Then

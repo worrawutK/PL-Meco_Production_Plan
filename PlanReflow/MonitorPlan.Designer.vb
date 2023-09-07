@@ -129,7 +129,7 @@ Partial Class MonitorPlan
         Me.LabelVer.Name = "LabelVer"
         Me.LabelVer.Size = New System.Drawing.Size(44, 13)
         Me.LabelVer.TabIndex = 56
-        Me.LabelVer.Text = "Ver2.01"
+        Me.LabelVer.Text = "Ver2.02"
         '
         'Panel2
         '
