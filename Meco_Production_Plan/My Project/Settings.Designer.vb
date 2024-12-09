@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -52,49 +52,6 @@ Namespace My
 #End If
                 Return defaultInstance
             End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=DBx;User ID=dbxuser")>  _
-        Public ReadOnly Property DBxConnectionString() As String
-            Get
-                Return CType(Me("DBxConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=DBx;User ID=dbxuser")>  _
-        Public ReadOnly Property DBxConnectionString1() As String
-            Get
-                Return CType(Me("DBxConnectionString1"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=APCSDB;Persist Security Info=True;User I"& _ 
-            "D=sa;Password=5dcda45fc424*")>  _
-        Public ReadOnly Property APCSDBConnectionString() As String
-            Get
-                Return CType(Me("APCSDBConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("PL-M-04")>  _
-        Public Property MCNo() As String
-            Get
-                Return CType(Me("MCNo"),String)
-            End Get
-            Set
-                Me("MCNo") = value
-            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -155,6 +112,61 @@ Namespace My
             Set
                 Me("Percent") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
+        Public Property PlanDayDivide() As Integer
+            Get
+                Return CType(Me("PlanDayDivide"),Integer)
+            End Get
+            Set
+                Me("PlanDayDivide") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("PL-M-03")>  _
+        Public Property MCNo() As String
+            Get
+                Return CType(Me("MCNo"),String)
+            End Get
+            Set
+                Me("MCNo") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=DBx;User ID=system;Password=p@$$w0rd")>  _
+        Public ReadOnly Property DBxConnectionString1() As String
+            Get
+                Return CType(Me("DBxConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=DBx;User ID=system;Password=p@$$w0rd")>  _
+        Public ReadOnly Property DBxConnectionString() As String
+            Get
+                Return CType(Me("DBxConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=APCSDB;Persist Security Info=True;User I"& _ 
+            "D=system;Password=p@$$w0rd")>  _
+        Public ReadOnly Property APCSDBConnectionString() As String
+            Get
+                Return CType(Me("APCSDBConnectionString"),String)
+            End Get
         End Property
     End Class
 End Namespace

@@ -3,6 +3,16 @@ Imports System.Net
 Imports System.Data.SqlClient
 Imports System.Security.Permissions
 Imports System.ComponentModel
+Imports System.Text
+Imports System.Web.Services.Description
+Imports System.Net.Security
+Imports System.Web.Script.Serialization
+Imports MessageDialog
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports System.Collections.Specialized.BitVector32
+Imports System.Security.Policy
+Imports Newtonsoft.Json.Linq
+
 Public Class Form1
     Dim _TablePlanDay As DBxDataSet1.PLMecoPlanDataDataTable
     Dim _TableTOP3 As DataTable 'As DBxDataSet1.PLMecoPlanDataDataTable
@@ -20,15 +30,35 @@ Public Class Form1
     Dim PlanDayDivide As Integer = 1
     '    Dim Percent As Integer = 70
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        PlanDayDivide = My.Settings.PlanDayDivide
         CbPercentBooking.Text = My.Settings.Percent
         Dim date1 As DateTime = Date.Now
 
+        'If My.Settings.MCNo = "PL-M-01" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo01.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-02" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo02.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-03" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-04" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo04.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-05" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo05.xml"
+        'ElseIf My.Settings.MCNo = "PL-M-06" Then
+        '    DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo06.xml"
+        'End If
         If My.Settings.MCNo = "PL-M-01" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo01.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo01.xml"
         ElseIf My.Settings.MCNo = "PL-M-02" Then
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo02.xml"
-        Else
-            DataTablePathTOP = "\\172.16.0.100\_Setup\CellController\10_PL\PL Meco Queue\Meco_Reflow\DataTableMCNo03.xml"
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo02.xml"
+        ElseIf My.Settings.MCNo = "PL-M-03" Then
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo03.xml"
+        ElseIf My.Settings.MCNo = "PL-M-04" Then
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo04.xml"
+        ElseIf My.Settings.MCNo = "PL-M-05" Then
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo05.xml"
+        ElseIf My.Settings.MCNo = "PL-M-06" Then
+            DataTablePathTOP = "\\172.16.0.115\MachineData\PL\Plan\Meco_Reflow\DataTableMCNo06.xml"
         End If
 
         date1 = Date.Now
@@ -77,6 +107,9 @@ Public Class Form1
         formload = True
         StratService()
         lbTimeUpdate.Text = "Update :" & Now
+
+        TextBoxQr.Focus()
+        PanelQr.BackColor = Color.LawnGreen
     End Sub
     Private Sub AutoPlan()
         PlMecoPlanData1TableAdapter1.FillBy(DBxDataSet11.PLMecoPlanData1, MecoPlanday, My.Settings.MCNo)
@@ -116,7 +149,7 @@ Public Class Form1
 
     Dim DataTablePathTOP As String
     Private Sub selects()
-        '  LoadPicture()
+        'LoadPicture()
 
 
 
@@ -128,6 +161,10 @@ Public Class Form1
             Label2.Text = "Meco#3 Machine Information"
         ElseIf My.Settings.MCNo = "PL-M-04" Then
             Label2.Text = "Meco#4 Machine Information"
+        ElseIf My.Settings.MCNo = "PL-M-05" Then
+            Label2.Text = "Meco#5 Machine Information"
+        ElseIf My.Settings.MCNo = "PL-M-06" Then
+            Label2.Text = "Meco#6 Machine Information"
         End If
         Dim date1 As Date = Date.Now
 
@@ -593,25 +630,40 @@ Public Class Form1
 
 
         PlMecoPlanData1TableAdapter1.FillBy(DBxDataSet11.PLMecoPlanData1, MecoPlanday, My.Settings.MCNo)
-        ApcsdbwipTableAdapter1.Fill(DBxDataSet11.APCSDBWIP)
+        'ApcsdbwipTableAdapter1.Fill(DBxDataSet11.APCSDBWIP)
 
 
         Dim WIPIPMAdapters As New DBxDataSet1TableAdapters.PLIPMWipTableAdapter 'count wip package PLIPMWip
 
         Dim WIPIPM As DBxDataSet1.PLIPMWipDataTable = WIPIPMAdapters.GetData() '2  sec
 
-
+        Dim lotdatas As List(Of LotData) = GetWIPData()
         For Each Data As DBxDataSet1.PLMecoPlanData1Row In DBxDataSet11.PLMecoPlanData1
             'Data WIP APCSDB
             Dim CheckPKG As Boolean = False
-            For Each apcsData As DBxDataSet1.APCSDBWIPRow In DBxDataSet11.APCSDBWIP
 
-                If Data.Package = apcsData.FORM_NAME Then
-                    Data.WIP = apcsData.WIP
-                    CheckPKG = True
-                End If
+            Dim lotdata_pkg As List(Of LotData) = lotdatas.Where(Function(x) x.Package.ToUpper.Trim = Data.Package.ToUpper.Trim).ToList
+            If lotdata_pkg.Count > 0 Then
+                CheckPKG = True
+                Data.WIP = lotdata_pkg.Count
+            End If
 
-            Next
+            'For Each lotdata In lotdatas.Where(Function(x) x.Package.ToUpper.Trim = Data.Package.ToUpper.Trim)
+            '    'If Data.Package = lotdata Then
+            '    '    Data.WIP = lotdata.WIP
+            '    '    CheckPKG = True
+            '    'End If
+            'Next
+
+
+            'For Each apcsData As DBxDataSet1.APCSDBWIPRow In DBxDataSet11.APCSDBWIP
+
+            '    If Data.Package = apcsData.FORM_NAME Then
+            '        Data.WIP = apcsData.WIP
+            '        CheckPKG = True
+            '    End If
+
+            'Next
 
             If CheckPKG = False Then
                 Dim count As Integer = 0
@@ -632,7 +684,7 @@ Public Class Form1
             'Data Result
             Dim CheckResule As Boolean = False
             For Each dataResult As DBxDataSet1.ResultMecoRow In DBxDataSet11.ResultMeco
-                If Data.Package = dataResult.Package Then
+                If Data.Package.Trim = dataResult.Package.Trim() Then
                     '  Resule += Resule
                     Data.Result = dataResult.Result
                     CheckResule = True
@@ -686,6 +738,7 @@ Public Class Form1
 
     Private Sub TimerNow_Tick(sender As Object, e As EventArgs) Handles TimerNow.Tick
         DNtime()
+
     End Sub
     Dim formload As Boolean = False
     Private Sub DNtime()
@@ -936,6 +989,7 @@ Public Class Form1
 
     End Sub
     Dim PKGRun As String
+    Dim c_OldOPNo As String
     Private Sub LoadPicture()
         Dim PLData As New DBxDataSet1TableAdapters.PLDataTableAdapter
         Dim Pltable As DBxDataSet1.PLDataDataTable = PLData.GetData(My.Settings.MCNo, MecoPlanday)
@@ -951,21 +1005,182 @@ Public Class Form1
             OPNo = Pltable.Rows(0)("OPNo").ToString()
 
         End If
-
+        If c_OldOPNo = OPNo Then
+            Return
+        End If
         lbOPNo.Text = OPNo
 
-        Dim oldImage As Image = pbOpno.BackgroundImage
+        Try
+            Dim oldImage As Image = pbOpno.BackgroundImage
 
-        Dim tClient As WebClient = New WebClient
+            Dim tClient As WebClient = New WebClient
 
-        Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            'Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            Dim tImage2 As Bitmap = Bitmap.FromStream(New MemoryStream(CallApi_GetUserAuthrization(OPNo)))  'Bitmap.FromStream(New MemoryStream(APISendGET(OPNo)))
+            pbOpno.BackgroundImage = tImage2
 
-        pbOpno.BackgroundImage = tImage
+            If oldImage Is Nothing Then
+                oldImage.Dispose()
+            End If
 
-        If oldImage Is Nothing Then
-            oldImage.Dispose()
-        End If
+
+
+
+            'Using (var streamWriter = New StreamWriter(httpRequest.GetRequestStream()))
+            '{
+            '    StreamWriter.Write(json);
+            '}
+
+            'String jsonResult = "";
+            'var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            'Using (var streamReader = New StreamReader(httpResponse.GetResponseStream()))
+            '{
+            '    jsonResult = StreamReader.ReadToEnd();
+            '}
+
+            'ApiLotInfo apiResultInfo = New JavaScriptSerializer().Deserialize < ApiLotInfo > (jsonResult);
+            'Return apiResultInfo;
+
+        Catch ex As Exception
+            SaveCatchLog(ex.Message, "http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")
+        End Try
+
     End Sub
+    Public Class UserInfo
+        Private c_OpNo As String
+        Public Property emp_Num() As String
+            Get
+                Return c_OpNo
+            End Get
+            Set(ByVal value As String)
+                c_OpNo = value
+            End Set
+        End Property
+        Private c_Permission As String
+        Public Property permission() As String
+            Get
+                Return c_Permission
+            End Get
+            Set(ByVal value As String)
+                c_Permission = value
+            End Set
+        End Property
+    End Class
+    Private Function APISendGET(opNo As String) As Byte()
+        Dim webRequestSetting As New HttpWebRequestSetting
+        webRequestSetting.UserName = "000000"
+        webRequestSetting.Password = "P@$$w0rd"
+        webRequestSetting.Url = "http://rohmapi/api/Man/GetUserIdentification"
+
+        Dim jsonResult As String = ""
+        Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(webRequestSetting.Url), HttpWebRequest)
+        httpRequest.Credentials = New NetworkCredential(webRequestSetting.UserName, webRequestSetting.Password)
+        httpRequest.Method = "POST"
+        httpRequest.ContentType = "application/json; charset=utf-8"
+        httpRequest.Headers.Add("Authorization", "Bearer ")
+
+        Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = opNo, .permission = ""})
+        Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
+            streamWriter.Write(json)
+        End Using
+
+
+        Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+
+        Using streamReader As New StreamReader(httpResponse.GetResponseStream())
+            jsonResult = streamReader.ReadToEnd()
+            Using ms As New MemoryStream
+                streamReader.BaseStream.CopyTo(ms)
+                Return ms.ToArray()
+            End Using
+        End Using
+
+        'Dim student0 As New Object
+        'With student0
+        '    .First = "Michael"
+        '    .Last = "Tucker"
+        'End With
+
+
+
+        'Dim jsonResult As String = ""
+        ' Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+
+        'Console.WriteLine(httpResponse.StatusCode);
+        'Dim js As System.Web.Script.Serialization.JavaScriptSerializer = New System.Web.Script.Serialization.JavaScriptSerializer()
+        ''js.Deserialize<ESCard>(jsonResult); 
+        'Return js.Deserialize(Of String)(jsonResult)
+    End Function
+    Public Function CallApi_GetUserAuthrization(emp_no As String) As Byte()
+        Try
+            Dim url As String = "http://rohmapi/api/Man/GetUserIdentification"
+
+            Dim json As String = New JavaScriptSerializer().Serialize(New UserInfo With {.emp_Num = emp_no, .permission = ""})
+
+            Dim httpRequest As HttpWebRequest = CType(WebRequest.Create(url), HttpWebRequest)
+            httpRequest.Method = "Post"
+            httpRequest.ContentType = "application/json; charset=utf-8"
+
+            Dim CheckAuthenAPI As String = CheckAuthorizationApi()
+            httpRequest.Headers.Add("Authorization", "Basic " + CheckAuthenAPI)
+
+
+            Dim jsonResult As String = ""
+            '    Dim is_Pass = ""
+            Using streamWriter As New StreamWriter(httpRequest.GetRequestStream())
+                streamWriter.Write(json)
+            End Using
+            'Try
+            Dim httpResponse = CType(httpRequest.GetResponse(), HttpWebResponse)
+            Using streamReader As New StreamReader(httpResponse.GetResponseStream())
+                jsonResult = streamReader.ReadToEnd()
+                Dim data = JObject.Parse(jsonResult)
+                Return CType(data("information")(0)("picture_data"), Byte())
+            End Using
+            'Catch ex As Exception
+            '    Return Nothing
+            'End Try
+        Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
+            Return Nothing
+        End Try
+
+
+        'Try
+        '    {
+
+        '    }
+        '    Catch
+        '    {
+        '        Return Json(is_Pass, JsonRequestBehavior.AllowGet);
+        '    } 
+        '    Return Json(is_Pass, JsonRequestBehavior.AllowGet);
+    End Function
+
+
+    Public Function CheckAuthorizationApi() As String
+        Dim username As String = "000000"
+        Dim password As String = "P@$$w0rd"
+        Dim svcCredentials As String = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(username + ":" + password))
+
+        Return svcCredentials
+
+    End Function
+
+
+
+
+
+
+    '    // Other way to whithout help of BlogSites class
+    '    //object blogObject = js.Deserialize<object>(jsonResult);
+    '    //var blogObject2 = js.Deserialize<ESCard>(jsonResult);
+
+
+
+
+    '    Return js.Deserialize < ESCard > (jsonResult); ;
+    '}
     Private Function ClearJigtool()
         Try
             Dim JigtoolAdapters As New DBxDataSet1TableAdapters.PLMecoJigToolTableAdapter
@@ -1134,12 +1349,21 @@ Public Class Form1
             Label1.Text = ""
             lbPKGRUN.Text = "Machine Running : " & PKG_Running
             lbOPNo.Text = OPNo
-
+            'If c_OldOPNo = OPNo Then
+            '    Return
+            'End If
             'PictureOPNo
             Dim oldImage As Image = pbOpno.BackgroundImage
             Dim tClient As WebClient = New WebClient
-            Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
-            pbOpno.BackgroundImage = tImage
+            ' Dim tImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData("http://webserv.thematrix.net/lsi/employees/Images/" & OPNo & ".jpg")))
+            Dim tImage2 As Bitmap = Bitmap.FromStream(New MemoryStream(CallApi_GetUserAuthrization(OPNo)))  'Bitmap.FromStream(New MemoryStream(APISendGET(OPNo)))
+
+            'If tImage2 Is Nothing Then
+            '    MessageBox.Show("tImage2 nothing")
+            'Else
+            '    MessageBox.Show("tImage2")
+            'End If
+            pbOpno.BackgroundImage = tImage2
             If oldImage Is Nothing Then
                 oldImage.Dispose()
             End If
@@ -1639,7 +1863,8 @@ Public Class Form1
         'Return "Data Source=CLIENT-205\SQLEXPRESS;Initial Catalog=DBTest;Integrated Security=False;User ID=sa;Password=1234"
         '172.16.0.102;Initial Catalog=DBx;User ID=dbxuser
         ' Return "Data Source=172.16.0.102;Initial Catalog=DBx;User ID=sa;Password=5dcda45fc424*"
-        Return "Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
+        'Return "Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
+        Return My.Settings.DBxConnectionString
         ' Return "Data Source=172.16.0.102;Initial Catalog=DBxDW;Persist Security Info=True;User ID=sa;Password=5dcda45fc424*"
     End Function
     Private Function GetSQLTest() As String
@@ -1737,6 +1962,55 @@ Public Class Form1
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub TimerlbShow_Tick(sender As Object, e As EventArgs) Handles TimerlbShow.Tick
+
+    End Sub
+
+    Private Sub TextBoxQr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxQr.KeyPress
+        If ProgressBar1.Value < ProgressBar1.Maximum Then
+            ProgressBar1.Value += 1
+        End If
+
+        If e.KeyChar = Chr(13) Then
+            Try
+                If TextBoxQr.Text.Length <> 252 Then
+                    MessageBox.Show("Qr Code ไม่ถูกต้อง [" & TextBoxQr.Text.Length.ToString & "]")
+                    TextBoxQr.Text = ""
+                    ProgressBar1.Value = 0
+                    Return
+                End If
+                Dim lotno As String = TextBoxQr.Text.Substring(30, 10).Trim()
+                Dim result As resultBase = CheckSetupLot(lotno, My.Settings.MCNo, lbOPNo.Text)
+                If Not result.IsPass Then
+                    MessageDialog.MessageBoxDialog.ShowMessageDialog("CheckSetupLot", result.Reason & vbCr & result.Comment, "Stored", result.ErrorNo)
+                Else
+                    Dim frm As MessageDialogAccept = New MessageDialogAccept("Setup", My.Settings.MCNo, lotno)
+                    frm.ShowDialog()
+                End If
+                TextBoxQr.Text = ""
+                ProgressBar1.Value = 0
+                SaveCatchLog("lotNo:" + lotno + ", MCNo:" + My.Settings.MCNo + ",opno:" + lbOPNo.Text, "CheckSetupLot")
+
+            Catch ex As Exception
+                SaveCatchLog(ex.Message.ToString, "TextBoxQr_KeyPress")
+            Finally
+                TextBoxQr.Focus()
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub TextBoxQr_Leave(sender As Object, e As EventArgs) Handles TextBoxQr.Leave
+        PanelQr.BackColor = Color.Red
+    End Sub
+
+    Private Sub PictureBoxQr_Click(sender As Object, e As EventArgs) Handles PictureBoxQr.Click
+        PanelQr.BackColor = Color.LawnGreen
+        ProgressBar1.Value = 0
+        TextBoxQr.Text = ""
+        TextBoxQr.Focus()
     End Sub
 #End Region
 End Class

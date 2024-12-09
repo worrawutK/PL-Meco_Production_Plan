@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("PlanReflow")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("Add Meco5")>
 <Assembly: AssemblyCompany("Microsoft")>
 <Assembly: AssemblyProduct("PlanReflow")>
 <Assembly: AssemblyCopyright("Copyright © Microsoft 2016")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.0.5.0")>
+<Assembly: AssemblyFileVersion("1.0.5.0")>

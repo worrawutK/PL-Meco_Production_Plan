@@ -75,19 +75,18 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.WipMecoTCdataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.WIPMecoTCdataTableAdapter()
+        Me.TextBoxQr = New System.Windows.Forms.TextBox()
+        Me.PictureBoxQr = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PanelQr = New System.Windows.Forms.Panel()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.TestWipSumTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TestWipSumTableAdapter()
-        Me.TableAdapterManager1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.TableAdapterManager()
         Me.PlMecoCapaDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter()
         Me.ResultMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.ResultMecoTableAdapter()
         Me.PlMecoPlanGroupTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter()
-        Me.ApcsdbwipTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.APCSDBWIPTableAdapter()
         Me.DBxDataSet11 = New Meco_Production_Plan.DBxDataSet1()
-        Me.WipMecoTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.WIPMecoTableAdapter()
-        Me.PlMecoPlanDataTableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanDataTableAdapter()
         Me.PlMecoPlanData1TableAdapter1 = New Meco_Production_Plan.DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,15 +95,17 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelQr.SuspendLayout()
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DayNight
         '
         Me.DayNight.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DayNight.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.DayNight.Location = New System.Drawing.Point(627, 120)
+        Me.DayNight.Location = New System.Drawing.Point(543, 120)
         Me.DayNight.Name = "DayNight"
         Me.DayNight.Size = New System.Drawing.Size(352, 25)
         Me.DayNight.TabIndex = 20
@@ -127,7 +128,7 @@ Partial Class Form1
         '
         Me.Time.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Time.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Time.Location = New System.Drawing.Point(969, 131)
+        Me.Time.Location = New System.Drawing.Point(885, 131)
         Me.Time.Name = "Time"
         Me.Time.Size = New System.Drawing.Size(352, 25)
         Me.Time.TabIndex = 18
@@ -208,7 +209,7 @@ Partial Class Form1
         Me.lbOPNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lbOPNo.Location = New System.Drawing.Point(1646, 480)
         Me.lbOPNo.Name = "lbOPNo"
-        Me.lbOPNo.Size = New System.Drawing.Size(51, 16)
+        Me.lbOPNo.Size = New System.Drawing.Size(50, 16)
         Me.lbOPNo.TabIndex = 7
         Me.lbOPNo.Text = "OP No."
         Me.lbOPNo.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -607,7 +608,7 @@ Partial Class Form1
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(1209, 869)
+        Me.DataGridView3.Location = New System.Drawing.Point(1205, 842)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.Size = New System.Drawing.Size(240, 150)
         Me.DataGridView3.TabIndex = 32
@@ -637,63 +638,30 @@ Partial Class Form1
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(1324, 763)
+        Me.Label5.Location = New System.Drawing.Point(1240, 715)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 34
-        Me.Label5.Text = "Ver 1.04"
+        Me.Label5.Text = "Ver 1.23"
         '
-        'WipMecoTCdataTableAdapter1
+        'TextBoxQr
         '
-        Me.WipMecoTCdataTableAdapter1.ClearBeforeFill = True
+        Me.TextBoxQr.BackColor = System.Drawing.Color.White
+        Me.TextBoxQr.Location = New System.Drawing.Point(1584, 1015)
+        Me.TextBoxQr.Name = "TextBoxQr"
+        Me.TextBoxQr.Size = New System.Drawing.Size(1, 20)
+        Me.TextBoxQr.TabIndex = 37
         '
-        'TestWipSumTableAdapter1
+        'PictureBoxQr
         '
-        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.PLIPMWipTableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoCapaDataTableAdapter = Me.PlMecoCapaDataTableAdapter1
-        Me.TableAdapterManager1.PLMecoJigToolTableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoPlanData1TableAdapter = Nothing
-        Me.TableAdapterManager1.PLMecoPlanDataTableAdapter = Nothing
-        Me.TableAdapterManager1.PLToolTypeTableAdapter = Nothing
-        Me.TableAdapterManager1.UpdateOrder = Meco_Production_Plan.DBxDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'PlMecoCapaDataTableAdapter1
-        '
-        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
-        '
-        'ResultMecoTableAdapter1
-        '
-        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanGroupTableAdapter1
-        '
-        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
-        '
-        'ApcsdbwipTableAdapter1
-        '
-        Me.ApcsdbwipTableAdapter1.ClearBeforeFill = True
-        '
-        'DBxDataSet11
-        '
-        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
-        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'WipMecoTableAdapter1
-        '
-        Me.WipMecoTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanDataTableAdapter1
-        '
-        Me.PlMecoPlanDataTableAdapter1.ClearBeforeFill = True
-        '
-        'PlMecoPlanData1TableAdapter1
-        '
-        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
+        Me.PictureBoxQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxQr.Image = Global.Meco_Production_Plan.My.Resources.Resources.qr_code
+        Me.PictureBoxQr.Location = New System.Drawing.Point(4, 4)
+        Me.PictureBoxQr.Name = "PictureBoxQr"
+        Me.PictureBoxQr.Size = New System.Drawing.Size(59, 51)
+        Me.PictureBoxQr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxQr.TabIndex = 38
+        Me.PictureBoxQr.TabStop = False
         '
         'Button3
         '
@@ -708,11 +676,56 @@ Partial Class Form1
         Me.Button3.TabIndex = 36
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'PanelQr
+        '
+        Me.PanelQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelQr.Controls.Add(Me.PictureBoxQr)
+        Me.PanelQr.Location = New System.Drawing.Point(1591, 1010)
+        Me.PanelQr.Name = "PanelQr"
+        Me.PanelQr.Size = New System.Drawing.Size(69, 61)
+        Me.PanelQr.TabIndex = 39
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(32, 1071)
+        Me.ProgressBar1.Maximum = 252
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(1833, 6)
+        Me.ProgressBar1.TabIndex = 40
+        '
+        'TestWipSumTableAdapter1
+        '
+        Me.TestWipSumTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoCapaDataTableAdapter1
+        '
+        Me.PlMecoCapaDataTableAdapter1.ClearBeforeFill = True
+        '
+        'ResultMecoTableAdapter1
+        '
+        Me.ResultMecoTableAdapter1.ClearBeforeFill = True
+        '
+        'PlMecoPlanGroupTableAdapter1
+        '
+        Me.PlMecoPlanGroupTableAdapter1.ClearBeforeFill = True
+        '
+        'DBxDataSet11
+        '
+        Me.DBxDataSet11.DataSetName = "DBxDataSet1"
+        Me.DBxDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PlMecoPlanData1TableAdapter1
+        '
+        Me.PlMecoPlanData1TableAdapter1.ClearBeforeFill = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1376, 780)
+        Me.ClientSize = New System.Drawing.Size(1292, 732)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.PanelQr)
+        Me.Controls.Add(Me.TextBoxQr)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button5)
@@ -750,25 +763,22 @@ Partial Class Form1
         CType(Me.ViewPlanDay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxQr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelQr.ResumeLayout(False)
+        CType(Me.DBxDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents WipMecoTCdataTableAdapter1 As DBxDataSet1TableAdapters.WIPMecoTCdataTableAdapter
     Friend WithEvents TestWipSumTableAdapter1 As DBxDataSet1TableAdapters.TestWipSumTableAdapter
-    Friend WithEvents TableAdapterManager1 As DBxDataSet1TableAdapters.TableAdapterManager
     Friend WithEvents PlMecoCapaDataTableAdapter1 As DBxDataSet1TableAdapters.PLMecoCapaDataTableAdapter
     Friend WithEvents ResultMecoTableAdapter1 As DBxDataSet1TableAdapters.ResultMecoTableAdapter
     Friend WithEvents PlMecoPlanGroupTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanGroupTableAdapter
-    Friend WithEvents ApcsdbwipTableAdapter1 As DBxDataSet1TableAdapters.APCSDBWIPTableAdapter
     Friend WithEvents DBxDataSet11 As DBxDataSet1
     Friend WithEvents DayNight As Label
     Friend WithEvents lbPKGRUN As Label
     Friend WithEvents Time As Label
-    Friend WithEvents WipMecoTableAdapter1 As DBxDataSet1TableAdapters.WIPMecoTableAdapter
     Friend WithEvents TimerNow As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
@@ -782,7 +792,6 @@ Partial Class Form1
     Friend WithEvents ViewTop3 As DataGridView
     Friend WithEvents ViewPlanDay As DataGridView
     Friend WithEvents TimerUpdate As Timer
-    Friend WithEvents PlMecoPlanDataTableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanDataTableAdapter
     Friend WithEvents PlMecoPlanData1TableAdapter1 As DBxDataSet1TableAdapters.PLMecoPlanData1TableAdapter
     Friend WithEvents lbStatus As Label
     Friend WithEvents lbStatusColor As Label
@@ -820,4 +829,8 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents lbTimeUpdate As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents TextBoxQr As TextBox
+    Friend WithEvents PictureBoxQr As PictureBox
+    Friend WithEvents PanelQr As Panel
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class
