@@ -227,4 +227,8 @@ Public Class MonitorPlan
         'LoadData()
         TimeCountUpdate()
     End Sub
+
+    Private Sub MecoNo01_Load(sender As Object, e As EventArgs) Handles MecoNo01.Load
+
+    End Sub
 End Class
